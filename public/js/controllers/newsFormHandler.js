@@ -1,32 +1,51 @@
-document.getElementById('news-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Create an AJAX request
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../../../app/controller/NewsController.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("newsForm");
+  var btn = document.getElementById("openNewsFormBtn");
+  var span = document.getElementsByClassName("closeBtn")[0];
 
-    xhr.onload = function() {
-        if (this.status === 200) {
-            // Parse the returned JSON and update the DOM
-            var newNews = JSON.parse(this.responseText);
-            if (response.success) {
-                // Update the news section with new data
-                updateNewsSection(response.news);
-            } else {
-                // Handle errors - display them to the user
-                displayErrors(response.errors);
-            }
-        }
+  if (btn) {
+    btn.onclick = function () {
+      form.style.display = "block";
     };
+  }
 
-    // Get form data
-    var formData = new FormData(this);
+  if (span) {
+    span.onclick = function () {
+      form.style.display = "none";
+    };
+  }
 
-    // Send the request
-    xhr.send(formData);
+  window.onclick = function (event) {
+    if (event.target == form) {
+      form.style.display = "none";
+    }
+  };
+
+  var newsForm = document.getElementById("newsForm");
+  if (newsForm) {
+    newsForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log("Form submitted");
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "../../../app/controller/NewsController.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+        xhr.onload = function () {
+            console.log("Response from PHP:", this.responseText);
+        };
+    
+        xhr.onerror = function () {
+            console.log("Request error:", xhr.status, xhr.statusText);
+        };
+    
+        var formData = new FormData(this); // 'this' refers to the form
+        xhr.send(new URLSearchParams(formData).toString());
+    });
+    
+  }
 });
 
 function updateNewsSection(newNews) {
-    // Logic to update the news section of your page with newNews using DOM
+  // Logic to update the news section of your page with newNews using DOM
 }
