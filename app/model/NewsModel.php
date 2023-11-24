@@ -29,7 +29,19 @@ class NewsModel {
         }
     }
 
-    // Other methods...
+    public function getAllNews() {
+        $query = "SELECT * FROM news ORDER BY created_at ASC";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+
+        $newsItems = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $newsItems[] = $row;
+        }
+
+        return $newsItems;
+    }
 }
 
 ?>
