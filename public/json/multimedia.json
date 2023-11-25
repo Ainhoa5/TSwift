@@ -1,0 +1,71 @@
+[
+    {
+        "mulType": "video",
+        "src": "debut.mp4",
+        "title": "Video 1: Entrevista",
+        "width": "560",
+        "height": "315",
+        "frameBorder": "0",
+        "allowFullscreen": true
+    },
+    {
+        "mulType": "video",
+        "src": "debut.mp4",
+        "title": "Video 2: Concierto en Vivo",
+        "width": "560",
+        "height": "315",
+        "frameBorder": "0",
+        "allowFullscreen": true
+    },
+    {
+        "mulType": "video",
+        "src": "debut.mp4",
+        "title": "Video 3: Documental",
+        "width": "560",
+        "height": "315",
+        "frameBorder": "0",
+        "allowFullscreen": true
+    },
+    {
+        "mulType": "image",
+        "src": "tay.jpg",
+        "title": "Imagen 1: Sesión de Fotos",
+        "width": "500",
+        "altText": "Portada del último álbum de Taylor Swift."
+    },
+    {
+        "mulType": "image",
+        "src": "tay.jpg",
+        "title": "Imagen 2: Portada de Álbum",
+        "width": "500",
+        "altText": "Portada del último álbum de Taylor Swift."
+    },
+    {
+        "mulType": "image",
+        "src": "tay.jpg",
+        "title": "Imagen 3: Concierto",
+        "width": "500",
+        "altText": "Portada del último álbum de Taylor Swift."
+    },
+    {
+        "mulType": "audio",
+        "src": "debut.mp3",
+        "title": "Audio 1: Canción Hit",
+        "controls": true,
+        "type": "audio/mpeg"
+    },
+    {
+        "mulType": "audio",
+        "src": "debut.mp3",
+        "title": "Audio 2: Balada",
+        "controls": true,
+        "type": "audio/mpeg"
+    },
+    {
+        "mulType": "audio",
+        "src": "debut.mp3",
+        "title": "Audio 3: Colaboración",
+        "controls": true,
+        "type": "audio/mpeg"
+    }
+]
