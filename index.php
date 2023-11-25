@@ -13,9 +13,9 @@
     <!-- MENU -->
     <nav>
         <ul>
-            <li><a href="page1.html">Page 1</a></li>
-            <li><a href="page2.html">Page 2</a></li>
-            <li><a href="page3.html">Page 3</a></li>
+            <li><a href="app/view/biografia.html">Biografía</a></li>
+            <li><a href="app/view/discografia.html">Discografía</a></li>
+            <li><a href="app/view/multimedia.html">Multimedia</a></li>
         </ul>
     </nav>
     <!-- button to create news -->
