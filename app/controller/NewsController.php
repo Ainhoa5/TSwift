@@ -5,8 +5,9 @@ include '../model/NewsModel.php';
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-    $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+    $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_SPECIAL_CHARS);
+
 
     $newsModel = new NewsModel();
     $response = [];

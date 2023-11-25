@@ -35,6 +35,7 @@
             <textarea id="content" name="content"></textarea>
         </div>
         <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
         <span class="closeBtn">&times;</span>
     </form>
 
