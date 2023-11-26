@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../public/styles/style.css">
+    <link rel="stylesheet" href="../../public/styles/timeline.css">
+    <link rel="stylesheet" href="../../public/styles/menu.css">
 </head>
 <body>
     <!-- MENU -->
@@ -16,5 +17,20 @@
             <li><a href="app/view/multimedia.html">Multimedia</a></li>
         </ul>
     </nav>
+    <div class="l-constrain">
+        <h1 class="title">Album Chronology
+  
+        </h1>
+        <div class="timeline">
+          <div class="timeline__bar"></div>
+          <div class="timeline__row" id="timelineButtons">
+            <!-- Timeline buttons will be injected here -->
+        </div>
+          <div class="timeline__content" id="timelineContent">
+            <!-- Timeline items will be injected here -->
+        </div>
+        </div>
+      </div>
+      <script src="../../public/js/handler/timelineHandler.js"></script>
 </body>
 </html>
