@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/styles/menu.css">
+</head>
+<body>
+    <!-- MENU -->
+    <nav>
+        <ul>
+            <li><a href="app/view/quiz.html">Quiz</a></li>
+            <li><a href="app/view/discografia.html">Discografía</a></li>
+            <li><a href="app/view/multimedia.html">Multimedia</a></li>
+        </ul>
+    </nav>
+    <div id="quiz-container">
+        <div id="question"></div>
+        <ul id="answer-options"></ul>
+        <button id="next-question" style="display:none;" onclick="showNextQuestion()">Siguiente Pregunta</button>
+    </div>
+    <div id="results" style="display:none;">
+        <h3>Resultados</h3>
+        <p id="correct-answers"></p>
+        <p id="wrong-answers"></p>
+        <p id="quiz-time"></p>
+    </div>
+    <script src="../../public/js/handler/quizHandler.js"></script>
+</body>
+</html>
