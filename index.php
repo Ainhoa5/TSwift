@@ -70,12 +70,7 @@
             <input type="date" id="eventDate" name="eventDate">
         </div>
 
-        <!-- Etiquetas de la Noticia -->
-        <div class="form-group">
-            <label for="tags">Etiquetas (separadas por comas):</label>
-            <input type="text" id="tags" name="tags">
-        </div>
-
+        
         <!-- Titulo y Contenido -->
         <div class="form-group">
             <label for="title">Title:</label>
@@ -84,6 +79,12 @@
         <div class="form-group">
             <label for="content">Content:</label>
             <textarea id="content" name="content"></textarea>
+        </div>
+        
+        <!-- Etiquetas de la Noticia -->
+        <div class="form-group">
+            <label for="tags">Etiquetas (separadas por comas):</label>
+            <input type="text" id="tags" name="tags">
         </div>
         <!-- Botones de acción -->
         <button type="submit">Submit</button>

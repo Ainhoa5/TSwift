@@ -61,20 +61,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var regex = /^[a-zA-Z0-9]+(,[a-zA-Z0-9]+)*$/;
 
     // Verifica si el campo está vacío. Si lo está, considera la validación como exitosa.
-    if (tags.value.trim() === '') {
-        showSuccess(tags);
-        return true;
+    if (tags.value.trim() === "") {
+      showSuccess(tags);
+      return true;
     }
 
     // Si el campo no está vacío, entonces aplica la expresión regular.
     if (!regex.test(tags.value)) {
-        showError(tags, "Las etiquetas deben estar separadas por comas sin espacios.");
-        return false;
+      showError(
+        tags,
+        "Las etiquetas deben estar separadas por comas sin espacios."
+      );
+      return false;
     } else {
-        showSuccess(tags);
-        return true;
+      showSuccess(tags);
+      return true;
     }
-}
+  }
 
   function validateNotEmpty(event) {
     var element = event.target;
@@ -139,23 +142,47 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isValid) {
         var title = document.getElementById("title").value;
         var content = document.getElementById("content").value;
+        var eventDate = document.getElementById("eventDate").value;
+        var tags = document.getElementById("tags").value;
+        var category = document.querySelector('input[name="category"]:checked')
+          ? document.querySelector('input[name="category"]:checked').value
+          : "";
+        var importance = document.querySelector(
+          'input[name="importance"]:checked'
+        )
+          ? document.querySelector('input[name="importance"]:checked').value
+          : "";
 
-        var newsItem = new News(title, content);
+        var newsItem = new News(
+          title,
+          content,
+          eventDate,
+          tags,
+          category,
+          importance
+        );
         newsItem.save();
       }
     });
   }
 
   // Fetch and display the news items on page load.
-  console.log("DOMContentLoaded executed");
   fetch("../../../app/handlers/getNews.php")
     .then((response) => response.json())
     .then((newsItems) => {
       newsItems.forEach((itemData) => {
-        // Create an instance of News for each item
-        let newsItem = new News(itemData.title, itemData.content);
+        // Crear una instancia de News para cada ítem, incluyendo los nuevos campos
+        let newsItem = new News(
+          itemData.title, 
+          itemData.content, 
+          itemData.eventDate, 
+          itemData.tags, 
+          itemData.category, 
+          itemData.importance
+        );
         newsItem.display();
       });
     })
     .catch((error) => console.error("Error fetching news:", error));
+
 });
