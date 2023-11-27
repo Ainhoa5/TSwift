@@ -34,16 +34,6 @@ class News {
         var formData = `title=${encodeURIComponent(this.title)}&content=${encodeURIComponent(this.content)}`;
         xhr.send(formData);
     }
-    displayAll(){
-        fetch('path/to/getNews.php')
-        .then(response => response.json())
-        .then(newsItems => {
-            newsItems.forEach(item => {
-                display(item);
-            });
-        })
-        .catch(error => console.error('Error fetching news:', error));
-    }
     display() {
         // Assuming there's a container for news items with an ID 'news-container'
         var newsContainer = document.getElementById('news-container');

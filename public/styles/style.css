@@ -5,6 +5,12 @@ body {
 }
 
 /* FORM STYLE */
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
 #newsForm {
     background-color: #ffffff;
     padding: 20px;
@@ -12,6 +18,30 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: auto;
+}
+.form-group-horizontal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; /* Espaciado entre los grupos de formulario */
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.h-group {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.form-group-horizontal > div {
+    display: flex;
+    align-items: center; /* Asegura que el texto y el input estén alineados */
 }
 
 .form-group {

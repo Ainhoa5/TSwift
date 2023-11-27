@@ -6,10 +6,15 @@ USE TSwift;
 
 CREATE TABLE news (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100),
-    content TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    title VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    eventDate DATE NULL,
+    tags VARCHAR(255),
+    category VARCHAR(50),
+    importance ENUM('alta', 'media', 'baja') DEFAULT 'media'
 );
+
 
 CREATE TABLE albums (
     id INT AUTO_INCREMENT PRIMARY KEY,
