@@ -32,6 +32,10 @@
             <input type="text" id="title" name="title" maxlength="100" required>
         </div>
         <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="group" name="group" maxlength="100" required>
+        </div>
+        <div class="form-group">
             <label for="content">Content:</label>
             <textarea id="content" name="content"></textarea>
         </div>
