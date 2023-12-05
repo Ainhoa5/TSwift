@@ -51,35 +51,40 @@ class News {
         var contentElement = document.createElement('p');
         contentElement.textContent = this.content;
     
-        // Añade los elementos solo si tienen valor
+        // Add the elements only if they have value
         newsItem.appendChild(titleElement);
         newsItem.appendChild(contentElement);
     
         if (this.eventDate) {
             var dateElement = document.createElement('p');
             dateElement.textContent = `Fecha del Evento: ${this.eventDate}`;
+            dateElement.classList.add('news-date'); // Add class for styling
             newsItem.appendChild(dateElement);
         }
     
         if (this.tags) {
             var tagsElement = document.createElement('p');
             tagsElement.textContent = `Etiquetas: ${this.tags}`;
+            tagsElement.classList.add('news-tags'); // Add class for styling
             newsItem.appendChild(tagsElement);
         }
     
         if (this.category) {
             var categoryElement = document.createElement('p');
             categoryElement.textContent = `Categoría: ${this.category}`;
+            categoryElement.classList.add('news-category'); // Add class for styling
             newsItem.appendChild(categoryElement);
         }
     
         if (this.importance) {
             var importanceElement = document.createElement('p');
             importanceElement.textContent = `Importancia: ${this.importance}`;
+            importanceElement.classList.add('news-importance'); // Add class for styling
             newsItem.appendChild(importanceElement);
         }
     
         newsContainer.appendChild(newsItem);
     }
+    
     
 }

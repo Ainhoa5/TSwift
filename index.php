@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/menu.css">
+    <link rel="stylesheet" href="public/styles/news.css">
     
 </head>
 
@@ -24,8 +25,10 @@
     <div class="btn-container">
         <button id="openNewsFormBtn">Create News</button>
     </div>
+
     <!-- Your page content -->
     <div id="news-container"></div>
+
     <!-- Pop-up Form in index.php -->
     <form id="newsForm" class="form-popup">
         <!-- Importancia de la Noticia -->

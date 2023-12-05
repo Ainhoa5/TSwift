@@ -1,0 +1,39 @@
+/* styles.css */
+
+/* General styles for the news container */
+#news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Styles for individual news items */
+.news-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.news-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Specific styles for event date, tags, category, and importance */
+.news-date,
+.news-tags,
+.news-category,
+.news-importance {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Additional styles can be added here */
