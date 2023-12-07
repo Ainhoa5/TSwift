@@ -6,7 +6,15 @@ class Audio extends Multimedia {
     }
 
     display() {
-        let mediaContainer = document.getElementById('audios');
+        let mediaSection = document.getElementById('audios');
+        let mediaContainer = mediaSection.querySelector('.media-content');
+    
+        if (!mediaContainer) {
+            mediaContainer = document.createElement('div');
+            mediaContainer.className = 'media-content';
+            mediaSection.appendChild(mediaContainer);
+        }
+    
         const audioElement = document.createElement('audio');
         audioElement.controls = this.controls;
         const sourceElement = document.createElement('source');
@@ -15,4 +23,5 @@ class Audio extends Multimedia {
         audioElement.appendChild(sourceElement);
         mediaContainer.appendChild(audioElement);
     }
+    
 }

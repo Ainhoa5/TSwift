@@ -8,7 +8,15 @@ class Video extends Multimedia {
     }
 
     display() {
-        let mediaContainer = document.getElementById('videos');
+        let mediaSection = document.getElementById('videos');
+        let mediaContainer = mediaSection.querySelector('.media-content');
+    
+        if (!mediaContainer) {
+            mediaContainer = document.createElement('div');
+            mediaContainer.className = 'media-content';
+            mediaSection.appendChild(mediaContainer);
+        }
+    
         const videoElement = document.createElement('iframe');
         videoElement.src = this.src;
         videoElement.width = this.width;
@@ -17,4 +25,5 @@ class Video extends Multimedia {
         videoElement.allowFullscreen = this.allowFullscreen;
         mediaContainer.appendChild(videoElement);
     }
+    
 }

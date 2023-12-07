@@ -1,75 +1,39 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-h1, h2 {
-    margin: 0.5rem 0;
-}
-
 section {
-    padding: 1rem;
-    margin: 1rem;
-}
-
-audio {
-    width: 100%;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-/* Base Styles */
-#videos, #images {
+    margin: auto;
+    max-width: 80%; /* Ajusta esto según tus preferencias */
+    background-color: #f0f0f0; /* Color de fondo de la sección */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para dar profundidad */
+  }
+  
+  .media-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Adjust this as needed */
-    align-items: flex-start;
-    gap: 10px; /* Space between items */
-}
-
-#videos iframe, #images img {
-    flex: 1 1 auto; /* Flexible grow and shrink */
-    max-width: 100%; /* Adjust the max-width for larger screens */
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .media-content > iframe,
+  .media-content > img {
+    max-width: 100%;
     height: auto;
-    border: none;
-}
-
-h2 {
-    width: 100%; /* Makes the header span full width */
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Responsive Design for smaller devices */
-@media screen and (max-width: 768px) {
-    #videos iframe, #images img {
-        max-width: 100%; /* Full width on smaller screens */
+    flex: 0 0 100%; /* Por defecto, cada elemento toma el 100% del ancho */
+    box-sizing: border-box; /* Asegúrate de que el padding y border estén incluidos en el ancho */
+  }
+  
+  /* Cuando la pantalla es más grande que 600px, muestra dos elementos por fila */
+  @media (min-width: 601px) {
+    .media-content > iframe,
+    .media-content > img {
+      flex: 1 1 50%; /* Cada elemento toma el 50% del ancho */
     }
-}
-
-/* Drop down */
-h2 {
-    /* Existing styles */
-    cursor: pointer; /* Indicates the headers are clickable */
-    user-select: none; /* Prevents text selection */
-}
-
-/* Optional: Style for when the section content is visible */
-h2.active + .media-content {
-    display: block;
-}
+  }
+  
+  /* Regla para un elemento solo */
+  .media-content > iframe:only-child,
+  .media-content > img:only-child {
+    flex: 0 0 100%; /* Si hay un solo elemento, toma todo el ancho */
+  }
+  
