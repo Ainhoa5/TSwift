@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../public/styles/menu.css">
-    <link rel="stylesheet" href="../../public/styles/style.css">
+    <link rel="stylesheet" href="../../public/styles/quiz.css">
 </head>
 <body>
     <!-- MENU -->
-    <nav>
-        <ul>
-            <li><a href="app/view/quiz.html">Quiz</a></li>
-            <li><a href="app/view/discografia.html">Discografía</a></li>
-            <li><a href="app/view/multimedia.html">Multimedia</a></li>
-        </ul>
-    </nav>
+    <div id="menu-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createMenu('../../', false); // '.' for current directory, 'true' to show search bar
+    </script>
     <div id="quiz-container">
         <div id="question"></div>
         <ul id="answer-options"></ul>

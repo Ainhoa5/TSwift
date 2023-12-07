@@ -7,7 +7,11 @@ class News {
         this.category = category;
         this.importance = importance;
     }
-
+    
+    static allNews = [];
+    static loadNews() {
+        // Cargar noticias desde la base de datos y añadirlas a allNews
+    }
     save() {
         console.log(this.tags);
         var xhr = new XMLHttpRequest();
@@ -18,9 +22,9 @@ class News {
             if (xhr.status === 200) {
                 try {
                     var response = JSON.parse(xhr.responseText);
-                    console.log("Response from PHP:", response);
                     if (response.success) {
-                        this.display(); // Call display method to update the DOM
+                        News.allNews.push(this); // Añadir la nueva noticia al array
+                        News.displayAll(); // Actualizar la visualización de las noticias
                     } else {
                         console.error("Error from PHP:", response.message);
                     }
@@ -85,6 +89,10 @@ class News {
     
         newsContainer.appendChild(newsItem);
     }
-    
+    static displayAll() {
+        const newsContainer = document.getElementById('news-container');
+        newsContainer.innerHTML = ''; // Limpia el contenedor actual de noticias
+        News.allNews.forEach(newsItem => newsItem.display());
+    }
     
 }

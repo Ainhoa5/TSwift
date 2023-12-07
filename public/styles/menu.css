@@ -1,4 +1,9 @@
 /* MENU */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8ff; /* Light pastel blue background */
+    margin: 0; /* Removes default margin */
+}
 nav {
     background-color: #ff69b4;
     text-align: center;
@@ -31,4 +36,29 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #000;
+}
+
+/* Search bar */
+/* SEARCH BAR */
+#search-input {
+    width: 50%; /* Adjusts the width of the search input field */
+    padding: 8px 10px; /* Adds internal spacing for comfortable typing */
+    margin: 10px 0; /* Vertical spacing around the search bar */
+    border: 2px solid #ff69b4; /* Border color matching the menu background */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    font-size: 16px; /* Legible font size */
+}
+
+#search-button {
+    background-color: #ff69b4; /* Button color matching the menu */
+    color: white; /* Text color for contrast */
+    border: none; /* No border for a cleaner look */
+    padding: 10px 15px; /* Padding for comfortable clicking */
+    border-radius: 5px; /* Rounded corners to match the input field */
+    cursor: pointer; /* Changes the cursor to indicate clickable button */
+    font-size: 16px; /* Consistent font size with the input field */
+}
+
+#search-button:hover {
+    background-color: #ff1493; /* Slightly darker pink for hover effect */
 }

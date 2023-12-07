@@ -33,7 +33,19 @@ class NewsModel {
             return false;
         }
     }
-    
+    public function searchNewsItems($searchTerm) {
+        $query = "SELECT * FROM news WHERE title LIKE :searchTerm"; // Asumiendo que tu tabla se llama 'news' y tienes una columna 'title'
+        $stmt = $this->conn->prepare($query);
+
+        // Usando % alrededor de searchTerm para buscar coincidencias parciales
+        $term = "%" . $searchTerm . "%";
+        $stmt->bindParam(":searchTerm", $term);
+
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 
     public function getAllNews() {
         $query = "SELECT * FROM news ORDER BY created_at ASC";

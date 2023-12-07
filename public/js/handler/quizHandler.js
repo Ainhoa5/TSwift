@@ -83,11 +83,32 @@ function showResults() {
     const resultsContainer = document.getElementById('results');
     resultsContainer.style.display = 'block';
 
-    document.getElementById('correct-answers').textContent = `Respuestas correctas: ${correctAnswers}`;
-    document.getElementById('wrong-answers').textContent = `Respuestas incorrectas: ${wrongAnswers}`;
+    const correctAnswersContent = `Respuestas correctas: ${correctAnswers}`;
+    const wrongAnswersContent = `Respuestas incorrectas: ${wrongAnswers}`;
     const quizEndTime = new Date();
     const quizDuration = (quizEndTime - quizStartTime) / 1000;
-    document.getElementById('quiz-time').textContent = `Tiempo total: ${quizDuration} segundos`;
+    const quizTimeContent = `Tiempo total: ${quizDuration} segundos`;
+
+    const resultsTable = `
+        <table>
+            <tr>
+                <th colspan="2">Resultados del Quiz</th>
+            </tr>
+            <tr>
+                <td>Respuestas Correctas</td>
+                <td>${correctAnswersContent}</td>
+            </tr>
+            <tr>
+                <td>Respuestas Incorrectas</td>
+                <td>${wrongAnswersContent}</td>
+            </tr>
+            <tr>
+                <td>Tiempo Total</td>
+                <td>${quizTimeContent}</td>
+            </tr>
+        </table>`;
+
+    resultsContainer.innerHTML = resultsTable;
 }
 
 // Inicia el quiz al cargar la página

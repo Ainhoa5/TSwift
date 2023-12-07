@@ -11,39 +11,38 @@
 </head>
 <body>
     <!-- MENU -->
-    <nav>
-        <ul>
-            <li><a href="app/view/quiz.html">Biografía</a></li>
-            <li><a href="app/view/discografia.html">Discografía</a></li>
-            <li><a href="app/view/multimedia.html">Multimedia</a></li>
-        </ul>
-    </nav>
+    <div id="menu-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createMenu('../../', false); // '.' for current directory, 'true' to show search bar
+    </script>
 
-    <header>
-        <h1>Biografía de Taylor Swift</h1>
-    </header>
 
     <section id="videos">
         <h2>Videos</h2>
-        <!-- Aquí se añadirán los videos -->
+        <div class="media-content">
+            <!-- Videos go here -->
+        </div>
     </section>
-
+    
     <section id="images">
         <h2>Imágenes</h2>
-        <!-- Aquí se añadirán las imágenes -->
+        <div class="media-content">
+            <!-- Images go here -->
+        </div>
     </section>
+    
+    
 
     <section id="audios">
         <h2>Audios</h2>
         <!-- Aquí se añadirán los audios -->
-        <!-- <audio controls>
+        <audio controls>
             Tu navegador no soporta el elemento de audio.
-        </audio> -->
+        </audio>
     </section>
 
-    <footer>
-        <!-- Footer content here -->
-    </footer>
     <script src="../../public/js/handler/multimediaHandler.js"></script>
     <script src="../../public/js/clases/Multimedia.js"></script>
     <script src="../../public/js/clases/Audio.js"></script>

@@ -4,6 +4,20 @@ include '../model/NewsModel.php';
 
 header('Content-Type: application/json');
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['search'])) {
+    
+    $newsModel = new NewsModel();
+    $searchTerm = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
+    $newsItems = $newsModel->searchNewsItems($searchTerm); // Asegúrate de que este método exista y funcione correctamente
+
+    if ($newsItems) {
+        echo json_encode(['success' => true, 'news' => $newsItems]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'No news items found.']);
+    }
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_SPECIAL_CHARS);

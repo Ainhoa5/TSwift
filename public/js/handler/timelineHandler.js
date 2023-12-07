@@ -21,7 +21,7 @@ function createTimeline(albums) {
                         <p>${album.description}</p>
                     </div>
                 </div>
-                <img src="../../public/multimedia/img/covers/${album.cover_image}" alt="">
+                <img src="../../public/multimedia/img/covers/${album.cover_image}" alt="cover" style="width: 900px; ">
             </div>
         `;
         timelineContent.innerHTML += item;

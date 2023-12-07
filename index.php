@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/menu.css">
     <link rel="stylesheet" href="public/styles/news.css">
-    
+
 </head>
 
 <body>
     <!-- MENU -->
-    <nav>
-        <ul>
-            <li><a href="app/view/quiz.html">Quiz</a></li>
-            <li><a href="app/view/discografia.html">Discografía</a></li>
-            <li><a href="app/view/multimedia.html">Multimedia</a></li>
-        </ul>
-    </nav>
+    <div id="menu-container"></div>
+    <script src="public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createMenu('', true); // '.' for current directory, 'true' to show search bar
+    </script>
+
+
     <!-- button to create news -->
     <div class="btn-container">
         <button id="openNewsFormBtn">Create News</button>
@@ -73,7 +74,7 @@
             <input type="date" id="eventDate" name="eventDate">
         </div>
 
-        
+
         <!-- Titulo y Contenido -->
         <div class="form-group">
             <label for="title">Title:</label>
@@ -83,7 +84,7 @@
             <label for="content">Content:</label>
             <textarea id="content" name="content"></textarea>
         </div>
-        
+
         <!-- Etiquetas de la Noticia -->
         <div class="form-group">
             <label for="tags">Etiquetas (separadas por comas):</label>

@@ -22,12 +22,6 @@ section {
     margin: 1rem;
 }
 
-section#videos iframe,
-section#images img {
-    max-width: 100%;
-    height: auto;
-}
-
 audio {
     width: 100%;
 }
@@ -37,4 +31,45 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+/* Base Styles */
+#videos, #images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust this as needed */
+    align-items: flex-start;
+    gap: 10px; /* Space between items */
+}
+
+#videos iframe, #images img {
+    flex: 1 1 auto; /* Flexible grow and shrink */
+    max-width: 100%; /* Adjust the max-width for larger screens */
+    height: auto;
+    border: none;
+}
+
+h2 {
+    width: 100%; /* Makes the header span full width */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design for smaller devices */
+@media screen and (max-width: 768px) {
+    #videos iframe, #images img {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Drop down */
+h2 {
+    /* Existing styles */
+    cursor: pointer; /* Indicates the headers are clickable */
+    user-select: none; /* Prevents text selection */
+}
+
+/* Optional: Style for when the section content is visible */
+h2.active + .media-content {
+    display: block;
 }
