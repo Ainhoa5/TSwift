@@ -1,40 +1,39 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-h1, h2 {
-    margin: 0.5rem 0;
-}
-
 section {
-    padding: 1rem;
-    margin: 1rem;
-}
-
-section#videos iframe,
-section#images img {
+    margin: auto;
+    max-width: 80%; /* Ajusta esto según tus preferencias */
+    background-color: #f0f0f0; /* Color de fondo de la sección */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para dar profundidad */
+  }
+  
+  .media-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .media-content > iframe,
+  .media-content > img {
     max-width: 100%;
     height: auto;
-}
-
-audio {
-    width: 100%;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
+    flex: 0 0 100%; /* Por defecto, cada elemento toma el 100% del ancho */
+    box-sizing: border-box; /* Asegúrate de que el padding y border estén incluidos en el ancho */
+  }
+  
+  /* Cuando la pantalla es más grande que 600px, muestra dos elementos por fila */
+  @media (min-width: 601px) {
+    .media-content > iframe,
+    .media-content > img {
+      flex: 1 1 50%; /* Cada elemento toma el 50% del ancho */
+    }
+  }
+  
+  /* Regla para un elemento solo */
+  .media-content > iframe:only-child,
+  .media-content > img:only-child {
+    flex: 0 0 100%; /* Si hay un solo elemento, toma todo el ancho */
+  }
+  

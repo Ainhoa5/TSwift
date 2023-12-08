@@ -3,7 +3,7 @@
         "mulType": "video",
         "src": "debut.mp4",
         "title": "Video 1: Entrevista",
-        "width": "560",
+        "width": "500",
         "height": "315",
         "frameBorder": "0",
         "allowFullscreen": true
@@ -37,6 +37,13 @@
         "mulType": "image",
         "src": "tay.jpg",
         "title": "Imagen 2: Portada de Álbum",
+        "width": "500",
+        "altText": "Portada del último álbum de Taylor Swift."
+    },
+    {
+        "mulType": "image",
+        "src": "tay.jpg",
+        "title": "Imagen 3: Concierto",
         "width": "500",
         "altText": "Portada del último álbum de Taylor Swift."
     },

@@ -1,3 +1,4 @@
+// Array de objetos que representa las preguntas del quiz
 const questions = [
     {
         question: "¿En qué año nació Taylor Swift?",
@@ -5,29 +6,32 @@ const questions = [
         correctAnswer: "1989"
     },
     {
-        question: "¿Cual es el número favorito de Taylor Swift?",
+        question: "¿Cuál es el número favorito de Taylor Swift?",
         answers: ["13", "32", "89"],
         correctAnswer: "13"
     },
     {
-        question: "¿Cuantos Grammy tiene Taylor Swift?",
+        question: "¿Cuántos Grammy tiene Taylor Swift?",
         answers: ["3", "21", "12"],
         correctAnswer: "12"
     },
     // Más preguntas...
 ];
-let currentQuestionIndex = 0;
-let correctAnswers = 0;
-let wrongAnswers = 0;
-let quizStartTime;
 
+// Variables para llevar el control del estado del quiz
+let currentQuestionIndex = 0; // Índice de la pregunta actual
+let correctAnswers = 0; // Contador de respuestas correctas
+let wrongAnswers = 0; // Contador de respuestas incorrectas
+let quizStartTime; // Variable para almacenar el inicio del tiempo del quiz
+
+// Función para mostrar la pregunta actual
 function showQuestion() {
     // Si es la primera pregunta, registra el inicio del tiempo del quiz
     if (currentQuestionIndex === 0) {
         quizStartTime = new Date();
     }
     
-    // Comprueba si todavía quedan preguntas por mostrar
+    // Comprueba si aún quedan preguntas por mostrar
     if (currentQuestionIndex < questions.length) {
         // Obtiene la pregunta actual basándose en el índice
         const currentQuestion = questions[currentQuestionIndex];
@@ -43,11 +47,13 @@ function showQuestion() {
     }
 }
 
+// Función para mostrar las opciones de respuesta para la pregunta actual
 function showAnswerOptions() {
     const currentQuestion = questions[currentQuestionIndex];
     const answersContainer = document.getElementById('answer-options');
-    answersContainer.innerHTML = '';
+    answersContainer.innerHTML = ''; // Limpia las respuestas anteriores
 
+    // Itera sobre las respuestas y crea un botón para cada una
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.textContent = answer;
@@ -56,38 +62,62 @@ function showAnswerOptions() {
     });
 }
 
+// Función para comprobar si la respuesta seleccionada es correcta
 function checkAnswer(selectedAnswer) {
     // Comprueba si la respuesta seleccionada es la correcta
     if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
         correctAnswers++;
-        alert("¡Respuesta correcta!"); // Feedback positivo, por ejemplo, usando un alert
+        alert("¡Respuesta correcta!"); // Muestra un mensaje de respuesta correcta
     } else {
         wrongAnswers++;
-        alert("Respuesta incorrecta."); // Feedback negativo
+        alert("Respuesta incorrecta."); // Muestra un mensaje de respuesta incorrecta
     }
 
-    // Preparar para la siguiente pregunta
+    // Prepara para la siguiente pregunta
     currentQuestionIndex++;
 
-    // Comprobar si quedan más preguntas
+    // Comprueba si quedan más preguntas
     if (currentQuestionIndex < questions.length) {
-        showQuestion(); // Mostrar la siguiente pregunta
-        showAnswerOptions(); // Actualizar las opciones de respuesta
+        showQuestion(); // Muestra la siguiente pregunta
     } else {
-        showResults(); // Si no hay más preguntas, mostrar los resultados
+        showResults(); // Si no hay más preguntas, muestra los resultados
     }
 }
 
+// Función para mostrar los resultados del quiz
 function showResults() {
-    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'none'; // Oculta el contenedor del quiz
     const resultsContainer = document.getElementById('results');
-    resultsContainer.style.display = 'block';
+    resultsContainer.style.display = 'block'; // Muestra el contenedor de resultados
 
-    document.getElementById('correct-answers').textContent = `Respuestas correctas: ${correctAnswers}`;
-    document.getElementById('wrong-answers').textContent = `Respuestas incorrectas: ${wrongAnswers}`;
+    // Prepara y muestra los detalles de los resultados
+    const correctAnswersContent = `Respuestas correctas: ${correctAnswers}`;
+    const wrongAnswersContent = `Respuestas incorrectas: ${wrongAnswers}`;
     const quizEndTime = new Date();
-    const quizDuration = (quizEndTime - quizStartTime) / 1000;
-    document.getElementById('quiz-time').textContent = `Tiempo total: ${quizDuration} segundos`;
+    const quizDuration = (quizEndTime - quizStartTime) / 1000; // Calcula la duración del quiz
+    const quizTimeContent = `Tiempo total: ${quizDuration} segundos`;
+
+    // Crea y muestra una tabla con los resultados
+    const resultsTable = `
+        <table>
+            <tr>
+                <th colspan="2">Resultados del Quiz</th>
+            </tr>
+            <tr>
+                <td>Respuestas Correctas</td>
+                <td>${correctAnswersContent}</td>
+            </tr>
+            <tr>
+                <td>Respuestas Incorrectas</td>
+                <td>${wrongAnswersContent}</td>
+            </tr>
+            <tr>
+                <td>Tiempo Total</td>
+                <td>${quizTimeContent}</td>
+            </tr>
+        </table>`;
+
+    resultsContainer.innerHTML = resultsTable;
 }
 
 // Inicia el quiz al cargar la página
