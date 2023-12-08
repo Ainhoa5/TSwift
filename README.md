@@ -18,7 +18,7 @@
 - [x] Hojas de estilo para imprimir.
 - [x] Maquetación web, capas, marcos.
 - [x] Uso de tablas con colspan y rowspan.
-- [ ] Footer con redes sociales.
+- [x] Footer con redes sociales.
 - [x] Diseño atractivo, legible, cuidando el flujo de navegación, para que sea claro e intuitivo.
 - [x] Transiciones, animaciones y transformaciones.
 - [x] Bordes, pseudoclases.
