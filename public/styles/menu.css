@@ -1,0 +1,34 @@
+/* MENU */
+nav {
+    background-color: #ff69b4;
+    text-align: center;
+    width: 100%; /* Ensures the nav bar spans the entire width */
+    /* position: fixed; */ /* Fixes the nav bar to the top */
+    top: 0; /* Aligns the nav bar to the top edge */
+    left: 0; /* Aligns the nav bar to the left edge */
+    z-index: 1000; /* Keeps the nav bar on top of other content */
+    margin-bottom: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 10px 0; /* Adds vertical padding inside the nav bar */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 8px 15px; /* Adds padding around the links for better clickability */
+}
+
+nav ul li a:hover {
+    color: #000;
+}
