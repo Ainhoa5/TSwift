@@ -13,4 +13,23 @@ function createMenu(basePath, showSearchBar) {
 
     document.getElementById('menu-container').innerHTML = menuHtml;
 }
+function createFooter() {
+    const footerHtml = `
+        <footer class="footer">
+            <div class="footer-column">
+                <p>&copy; 2023 Taylor Swift Fan Page. Todos los derechos reservados.</p>
+                <p>Este sitio no está afiliado con Taylor Swift o su sello discográfico.</p>
+            </div>
+            <div class="footer-column">
+                <ul class="social-icons">
+                    <li><a href="https://taylorswift.tumblr.com/"><i class="fab fa-tumblr"></i></a></li>
+                    <li><a href="https://twitter.com/taylorswift13"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/taylorswift/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </footer>`;
+
+    document.getElementById('footer-container').innerHTML = footerHtml;
+}
+
 

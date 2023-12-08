@@ -1,0 +1,27 @@
+.footer {
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto en blanco */
+    display: flex; /* Uso de flexbox para las columnas */
+    justify-content: space-between; /* Espacio entre las columnas */
+    padding: 20px; /* Algo de padding para el contenido */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columnas */
+}
+
+.social-icons {
+    display: flex; /* Alinea los iconos de redes sociales horizontalmente */
+    list-style-type: none; /* Remueve los estilos de lista predeterminados */
+    padding: 0; /* Remueve el padding predeterminado */
+}
+
+.social-icons li {
+    margin-right: 10px; /* Espaciado entre los iconos */
+}
+
+.social-icons i {
+    color: white; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+}

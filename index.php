@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/menu.css">
     <link rel="stylesheet" href="public/styles/news.css">
+    <link rel="stylesheet" href="public/styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 </head>
 
 <body>
+    <!-- NOSCRIPT -->
+    <noscript>
+        <div style="background-color: yellow; color: black; padding: 10px; text-align: center;">
+            Parece que JavaScript no está habilitado en tu navegador. Algunas características de esta página no funcionarán correctamente sin JavaScript.
+        </div>
+    </noscript>
     <!-- MENU -->
     <div id="menu-container"></div>
     <script src="public/templates/templates.js"></script>
@@ -96,7 +104,13 @@
         <span class="closeBtn">&times;</span>
     </form>
 
-
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+    <script src="public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createFooter(); // '.' for current directory, 'true' to show search bar
+    </script>
     <!-- Including your JavaScript file -->
     <script src="public/js/handler/newsFormHandler.js"></script>
     <script src="public/js/clases/News.js"></script>
