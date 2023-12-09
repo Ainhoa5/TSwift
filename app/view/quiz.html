@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../public/styles/menu.css">
-    <link rel="stylesheet" href="../../public/styles/quiz.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <meta
+      name="Quiz"
+      content="A little test game"
+    />
+    <link rel="stylesheet" href="../../public/styles/menu.css" />
+    <link rel="stylesheet" href="../../public/styles/quiz.css" />
     <style>
-        body {
-  background-image: url('../../public/multimedia/img/bg.jpg'); /* Asegúrate de reemplazar con la ruta real de tu imagen */
-  background-size: cover; /* Esto hará que la imagen cubra todo el espacio disponible */
-  background-position: center; /* Esto centrará la imagen en la página */
-  background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
-  background-attachment: fixed; /* Esto hará que la imagen de fondo sea fija durante el desplazamiento */
-}
-
+      body {
+        background-image: url("../../public/multimedia/img/bg.jpg"); /* Asegúrate de reemplazar con la ruta real de tu imagen */
+        background-size: cover; /* Esto hará que la imagen cubra todo el espacio disponible */
+        background-position: center; /* Esto centrará la imagen en la página */
+        background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
+        background-attachment: fixed; /* Esto hará que la imagen de fondo sea fija durante el desplazamiento */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- MENU -->
     <div id="menu-container"></div>
     <script src="../../public/templates/templates.js"></script>
     <script>
-        // Call the function with appropriate parameters
-        createMenu('../../', false); // '.' for current directory, 'true' to show search bar
+      // Call the function with appropriate parameters
+      createMenu("../../", false); // '.' for current directory, 'true' to show search bar
     </script>
     <div id="quiz-container">
-        <div id="question"></div>
-        <ul id="answer-options"></ul>
-        <button id="next-question" style="display:none;" onclick="showNextQuestion()">Siguiente Pregunta</button>
+      <div id="question"></div>
+      <ul id="answer-options"></ul>
+      <button
+        id="next-question"
+        style="display: none"
+        onclick="showNextQuestion()"
+      >
+        Siguiente Pregunta
+      </button>
     </div>
-    <div id="results" style="display:none;">
-        <h3>Resultados</h3>
-        <p id="correct-answers"></p>
-        <p id="wrong-answers"></p>
-        <p id="quiz-time"></p>
+    <div id="results" style="display: none">
+      <h3>Resultados</h3>
+      <p id="correct-answers"></p>
+      <p id="wrong-answers"></p>
+      <p id="quiz-time"></p>
     </div>
     <script src="../../public/js/handler/quizHandler.js"></script>
-</body>
+  </body>
 </html>
