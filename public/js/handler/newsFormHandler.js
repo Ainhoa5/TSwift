@@ -216,7 +216,7 @@ function filterNews() {
 }
 
 // Añade un event listener al botón de búsqueda
-document.getElementById('search-button').addEventListener('click', filterNews);
+/* document.getElementById('search-button').addEventListener('click', filterNews); */
 
 // Obtiene y muestra las noticias al cargar la página
 fetch("../../../app/handlers/getNews.php")

@@ -1,5 +1,6 @@
 .footer {
     background-color: #2c2c38; /* Fondo oscuro */
+    margin-top: 150px;
     color: white; /* Texto en blanco */
     display: flex; /* Uso de flexbox para las columnas */
     justify-content: space-between; /* Espacio entre las columnas */

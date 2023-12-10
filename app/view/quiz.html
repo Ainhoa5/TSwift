@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="../../public/styles/menu.css" />
     <link rel="stylesheet" href="../../public/styles/quiz.css" />
+    <link rel="stylesheet" href="../../public/styles/footer.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
       body {
@@ -47,7 +48,16 @@
       <p id="wrong-answers"></p>
       <p id="quiz-time"></p>
     </div>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createFooter(); // '.' for current directory, 'true' to show search bar
+    </script>
+
     <script src="../../public/js/handler/quizHandler.js"></script>
-    <script src="../../public/templates/headerLogic.js"></script>
+    <script src="../../public/templates/dropdownMenu.js"></script>
   </body>
 </html>

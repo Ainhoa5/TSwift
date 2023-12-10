@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="public/styles/news.css">
     <link rel="stylesheet" href="public/styles/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -30,12 +31,6 @@
         // Call the function with appropriate parameters
         createMenu('', true); // '.' for current directory, 'true' to show search bar
     </script>
-
-
-    <!-- button to create news -->
-    <div class="btn-container">
-        <button id="openNewsFormBtn">Create News</button>
-    </div>
 
     <!-- Your page content -->
     <div id="news-container"></div>
@@ -116,7 +111,28 @@
     <!-- Including your JavaScript file -->
     <script src="public/js/handler/newsFormHandler.js"></script>
     <script src="public/js/clases/News.js"></script>
-    <script src="public/templates/headerLogic.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        //SCROLL
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '85px',
+            duration: 2200,
+            reset: true
+        })
+
+        sr.reveal('.news-item', {
+            delay: 200
+        });
+        sr.reveal('.hero', {
+            delay: 400
+        });
+        sr.reveal('.btn-container', {
+            delay: 400
+        });
+    </script>
+    <script src="public/templates/dropdownMenu.js"></script>
 </body>
 
 </html>

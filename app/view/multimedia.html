@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimedia</title>
-    <meta
-      name="Quiz"
-      content="A recolection of all Taylor Swift related"
-    />
+    <meta name="Quiz" content="A recolection of all Taylor Swift related" />
     <link rel="stylesheet" href="../../public/styles/multimedia.css" />
+    <link rel="stylesheet" href="../../public/styles/footer.css" />
     <link rel="stylesheet" href="../../public/styles/menu.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="../../public/styles/style.css" />
   </head>
   <body>
@@ -22,7 +23,9 @@
       // Call the function with appropriate parameters
       createMenu("../../", false); // '.' for current directory, 'true' to show search bar
     </script>
-
+    <br />
+    <br />
+    <br />
     <section id="videos">
       <h2>Videos</h2>
       <div class="media-content">
@@ -45,11 +48,18 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+      // Call the function with appropriate parameters
+      createFooter(); // '.' for current directory, 'true' to show search bar
+    </script>
     <script src="../../public/js/handler/multimediaHandler.js"></script>
     <script src="../../public/js/clases/Multimedia.js"></script>
     <script src="../../public/js/clases/Audio.js"></script>
     <script src="../../public/js/clases/Video.js"></script>
     <script src="../../public/js/clases/Image.js"></script>
-    <script src="../../public/templates/headerLogic.js"></script>
+    <script src="../../public/templates/dropdownMenu.js"></script>
   </body>
 </html>

@@ -3,7 +3,6 @@ section {
     max-width: 80%; /* Ajusta esto según tus preferencias */
     background-color: #f0f0f0; /* Color de fondo de la sección */
     padding: 20px;
-    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para dar profundidad */
   }
   

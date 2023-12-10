@@ -1,31 +1,50 @@
-function createMenu(basePath, showSearchBar) {
-    const menuHtml = `
-        <nav>
-            <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
-            ${!showSearchBar ? `<a href="${basePath}"><img src="${basePath}/public/multimedia/img/logofinal.png" alt="Logo" style="height: 200px;"></a>` : ''}
-            <ul id="menu-items" class="hidden">
-                <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
-                <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
-                <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
-                ${showSearchBar ? `<input type="text" id="search-input" placeholder="Buscar noticias..." />
-                                  <button id="search-button">Buscar</button>` : ''}
-            </ul>
-        </nav>`;
+function createMenu(basePath, isIndex) {
+    let menuHtml = `
+        <div class="header-container">
+            <header>
+                <div class="navbar">
+                    <div class="logo"><a href="${basePath}">HOME</a></div>
+                    <ul class="links">
+                        <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
+                        <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
+                        <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
+                    </ul>
+                    
+                    <a href="#" id="openNewsFormBtn" class="action_btn">Create News</a>
+                    <div class="toggle_btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+
+                <div class="dropdown_menu">
+                    <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
+                    <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
+                    <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
+
+                    <button id="openNewsFormBtn" class="action_btn">Create News</button>
+                </div>
+            </header>`;
+
+    if (isIndex) {
+        menuHtml += `
+            <main class="hero">
+                <section id="hero">
+                    <a href=""><img src="${basePath}/public/multimedia/img/logofinal.png" alt=""></a>
+                    <h1>Welcome</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>Repudiandae vel alias,</p>
+                    </br>
+                    <input type="text" id="search-input" placeholder="Buscar noticias..." />
+                    </br>
+                    <a href="#" class="search-btn" id="search-button">Search</a>
+                </section>
+            </main>`;
+    }
+
+    menuHtml += `</div>`;
 
     document.getElementById('menu-container').innerHTML = menuHtml;
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuItems = document.getElementById('menu-items');
 
-    menuToggle.addEventListener('click', function() {
-        if (menuItems.style.display === "block") {
-            menuItems.style.display = "none";
-        } else {
-            menuItems.style.display = "block";
-        }
-    });
-});
 
 function createFooter() {
     const footerHtml = `
