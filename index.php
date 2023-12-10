@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
-    
-    <meta
-      name="Quiz"
-      content="All news about Taylor Swift"
-    />
+
+    <meta name="Quiz" content="All news about Taylor Swift" />
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/menu.css">
     <link rel="stylesheet" href="public/styles/news.css">
@@ -119,7 +116,7 @@
     <!-- Including your JavaScript file -->
     <script src="public/js/handler/newsFormHandler.js"></script>
     <script src="public/js/clases/News.js"></script>
-
+    <script src="public/templates/headerLogic.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,9 @@
 function createMenu(basePath, showSearchBar) {
     const menuHtml = `
         <nav>
+            <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
             ${!showSearchBar ? `<a href="${basePath}"><img src="${basePath}/public/multimedia/img/logofinal.png" alt="Logo" style="height: 200px;"></a>` : ''}
-            <ul>
+            <ul id="menu-items" class="hidden">
                 <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
                 <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
                 <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
@@ -13,6 +14,19 @@ function createMenu(basePath, showSearchBar) {
 
     document.getElementById('menu-container').innerHTML = menuHtml;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuItems = document.getElementById('menu-items');
+
+    menuToggle.addEventListener('click', function() {
+        if (menuItems.style.display === "block") {
+            menuItems.style.display = "none";
+        } else {
+            menuItems.style.display = "block";
+        }
+    });
+});
+
 function createFooter() {
     const footerHtml = `
         <footer class="footer">

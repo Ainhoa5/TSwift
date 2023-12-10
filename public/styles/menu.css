@@ -62,3 +62,49 @@ nav ul li a:hover {
 #search-button:hover {
     background-color: #ff1493; /* Slightly darker pink for hover effect */
 }
+
+/* Estilo para el botón del menú */
+/* Estilo para el botón del menú - visible solo en pantallas pequeñas */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilo para los elementos del menú en pantallas grandes */
+nav ul {
+    display: block; /* Asegúrate de que esté visible en pantallas grandes */
+}
+
+/* Estilo para los elementos del menú en pantallas pequeñas */
+/* Estilo para los elementos del menú en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón en pantallas pequeñas */
+    }
+
+    nav ul {
+        display: none; /* Oculta los elementos del menú inicialmente en pantallas pequeñas */
+        width: 100%; /* Utiliza el ancho completo disponible */
+        padding: 10px;
+        text-align: left;
+        padding-left: 20%;
+        margin: 0;
+    }
+    nav ul li {
+        display: inline-block; /* Muestra los elementos del menú en línea y centrados */
+        width: 100%; /* Cada elemento del menú ocupa todo el ancho disponible */
+        margin-right: 0; /* Elimina el margen derecho */
+    }
+
+    #search-input, #search-button {
+        margin: 10px auto; /* Centrar elementos */
+        max-width: 50%;
+        background-color: #f1f8ff;
+        color: #000;
+    }
+}
