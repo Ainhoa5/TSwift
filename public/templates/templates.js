@@ -8,9 +8,16 @@ function createMenu(basePath, isIndex) {
                         <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
                         <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
                         <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
-                    </ul>
-                    
-                    <a href="#" id="openNewsFormBtn" class="action_btn">Create News</a>
+                    </ul>`;
+
+    if (isIndex) {
+        menuHtml += `
+
+                    <a href="#" id="openNewsFormBtn" class="action_btn">Create News</a>`;
+
+    }
+
+    menuHtml += `
                     <div class="toggle_btn">
                         <i class="fa-solid fa-bars"></i>
                     </div>
