@@ -165,7 +165,8 @@ input[type="checkbox"] + label {
 
 @media print {
   body{
-    background-color: #333;
+    background-color: #333;/* Se que no es buena idea poner fondo oscuro para imprimir pero ah */
+    color: #fff;
   }
 }
 
