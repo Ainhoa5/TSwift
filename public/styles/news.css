@@ -3,33 +3,33 @@
 /* General styles for the news container */
 #news-container {
   margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre los elementos */
-    justify-content: center; /* Centrar los elementos horizontalmente */
-    padding: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre los elementos */
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  padding: 20px;
+}
 
 /* Styles for individual news items */
 .news-item {
-    flex: 1 1 300px; /* Cada elemento puede crecer y encogerse, pero comenzará con un tamaño base de 300px */
-    min-width: 300px; /* Define un ancho mínimo para los elementos */
-    max-width: 100%; /* Asegura que los elementos no sean más anchos que su contenedor */
-    background-color: #f0ceef; /* Fondo para hacer los elementos distinguibles, cambia al color que prefieras */
-    padding: 15px; /* Espaciado interno para el contenido */
-    border-radius: 20px; /* Bordes redondeados para estética */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para profundidad */
-  }
+  flex: 1 1 300px; /* Cada elemento puede crecer y encogerse, pero comenzará con un tamaño base de 300px */
+  min-width: 300px; /* Define un ancho mínimo para los elementos */
+  max-width: 100%; /* Asegura que los elementos no sean más anchos que su contenedor */
+  background-color: #f0ceef; /* Fondo para hacer los elementos distinguibles, cambia al color que prefieras */
+  padding: 15px; /* Espaciado interno para el contenido */
+  border-radius: 20px; /* Bordes redondeados para estética */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
 
 .news-item h3 {
-    margin-top: 0;
-    color: #333;
+  margin-top: 0;
+  color: #333;
 }
 
 .news-item p {
-    margin: 5px 0;
-    color: rgb(62, 60, 60);
-    text-align: center;
+  margin: 5px 0;
+  color: rgb(62, 60, 60);
+  text-align: center;
 }
 
 /* Specific styles for event date, tags, category, and importance */
@@ -37,17 +37,17 @@
 .news-tags,
 .news-category,
 .news-importance {
-    font-style: italic;
-    font-size: 0.9em;
+  font-style: italic;
+  font-size: 0.9em;
 }
 /* Estilos responsivos para pantallas más pequeñas */
 @media (max-width: 600px) {
-    #news-container {
-      flex-direction: column; /* Coloca los elementos de noticias en una sola columna */
-    }
-  
-    .news-item {
-      flex-basis: auto; /* Permite que los elementos crezcan para llenar su contenedor */
-      width: 100%; /* Ocupa todo el ancho del contenedor */
-    }
+  #news-container {
+    flex-direction: column; /* Coloca los elementos de noticias en una sola columna */
   }
+
+  .news-item {
+    flex-basis: auto; /* Permite que los elementos crezcan para llenar su contenedor */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+  }
+}
