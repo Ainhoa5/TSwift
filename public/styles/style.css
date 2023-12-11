@@ -98,7 +98,19 @@ button:hover {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   width: 80%; /* Adjust as needed */
 }
+/* Estilos para las etiquetas de los radio buttons */
+input[type="radio"] + label {
+  margin-left: 10px; /* Espacio entre el botón y el texto */
+  color: #333; /* Color del texto */
+  font-family: Arial, sans-serif; /* Tipo de fuente */
+}
 
+/* Estilos para las etiquetas de los checkboxes */
+input[type="checkbox"] + label {
+  margin-left: 10px; /* Espacio entre el botón y el texto */
+  color: #333; /* Color del texto */
+  font-family: Arial, sans-serif; /* Tipo de fuente */
+}
 .closeBtn {
   color: #aaa;
   position: absolute;
