@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Selecciona todos los encabezados de sección y oculta inicialmente el contenido
     const sectionHeaders = document.querySelectorAll('section > h2');
     sectionHeaders.forEach(header => {
-        console.log('Header found:', header); // Línea de depuración
         const mediaContainer = header.nextElementSibling;
-        console.log('Media Container found:', mediaContainer); // Línea de depuración
 
         if (mediaContainer) {
             // Oculta inicialmente todas las secciones

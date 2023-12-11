@@ -116,7 +116,6 @@ section#hero{
     text-align: center;
     color: #fff;
 }
-
 #hero h1{
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -124,6 +123,7 @@ section#hero{
 /* SEARCH BAR */
 #search-input {
     padding: 0.5rem 1rem; /* Espaciado interno */
+    margin: 10px 0px;
     border: 2px solid #fff; /* Borde blanco */
     background: transparent; /* Fondo transparente */
     color: #fff; /* Color del texto */

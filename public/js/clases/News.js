@@ -9,9 +9,7 @@ class News {
     }
     
     static allNews = [];
-    static loadNews() {
-        // Cargar noticias desde la base de datos y añadirlas a allNews
-    }
+
     save() {
         console.log(this.tags);
         var xhr = new XMLHttpRequest();
