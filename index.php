@@ -122,14 +122,20 @@
             reset: true
         })
 
-        sr.reveal('.news-item', {
-            delay: 200
+        // Base delay
+        let baseDelay = 100;
+
+        sr.reveal('.navbar', {
+            delay: baseDelay // 100ms
         });
         sr.reveal('.hero', {
-            delay: 400
+            delay: baseDelay += 900 // 200ms
         });
         sr.reveal('.btn-container', {
-            delay: 400
+            delay: 400 // 300ms
+        });
+        sr.reveal('.news-item', {
+            delay: 400 // 400ms
         });
     </script>
     <script src="public/templates/dropdownMenu.js"></script>

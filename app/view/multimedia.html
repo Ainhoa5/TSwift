@@ -55,6 +55,31 @@
       // Call the function with appropriate parameters
       createFooter(); // '.' for current directory, 'true' to show search bar
     </script>
+    <!-- SCROLL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      //SCROLL
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "85px",
+        duration: 2200,
+        reset: true,
+      });
+
+      sr.reveal(".navbar", {
+        delay: 50,
+      });
+      sr.reveal("#videos", {
+        delay: 200,
+      });
+      sr.reveal("#images", {
+        delay: 300,
+      });
+      sr.reveal("#audios", {
+        delay: 400,
+      });
+    </script>
+
     <script src="../../public/js/handler/multimediaHandler.js"></script>
     <script src="../../public/js/clases/Multimedia.js"></script>
     <script src="../../public/js/clases/Audio.js"></script>

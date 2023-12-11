@@ -73,5 +73,26 @@
     </script>
     <script src="../../public/js/handler/timelineHandler.js"></script>
     <script src="../../public/templates/dropdownMenu.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      //SCROLL
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "85px",
+        duration: 2200,
+        reset: true,
+      });
+
+      sr.reveal(".l-constrain", {
+        delay: 200,
+      });
+      sr.reveal("#biography", {
+        delay: 400,
+      });
+      sr.reveal(".navbar", {
+        delay: 50,
+      });
+    </script>
   </body>
 </html>
