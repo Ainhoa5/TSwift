@@ -13,19 +13,53 @@ function initializeFormPopup() {
   };
 }
 
-function initializeFormValidation() {
-  // Elementos del formulario para la validación
-  var eventDate = document.getElementById("eventDate");
-  var tags = document.getElementById("tags");
-  var title = document.getElementById("title");
-  var content = document.getElementById("content");
+function validateField(event) {
+  var field = event.target;
+  var validationType = field.dataset.validationType; // Usa un atributo data- para determinar el tipo de validación
 
-  // Event listeners para la validación de los campos del formulario
-  eventDate.addEventListener("blur", validateEventDate);
-  tags.addEventListener("blur", validateTags);
-  title.addEventListener("blur", validateNotEmpty);
-  content.addEventListener("blur", validateNotEmpty);
+  switch (validationType) {
+    case 'date':
+      validateEventDate();
+      break;
+    case 'text':
+      validateText(event);
+      break;
+    // Añadir más casos según sea necesario
+  }
 }
+
+function initializeFormValidation() {
+  var fields = document.querySelectorAll('.form-field');
+  var timeout = null; // Variable para almacenar el ID del temporizador
+
+  fields.forEach(field => {
+    // Asignar el tipo de validación según el id o alguna otra propiedad
+    switch (field.id) {
+      case 'eventDate':
+        field.dataset.validationType = 'date';
+        // Manejar el evento change de forma separada para eventDate
+        field.addEventListener("change", validateField);
+        break;
+      case 'tags':
+      case 'title':
+      case 'content':
+        field.dataset.validationType = 'text';
+        // Añadir el evento keyup con setTimeout
+        field.addEventListener("keyup", function (event) {
+          clearTimeout(timeout); // Limpia el temporizador anterior
+          // Establece un nuevo temporizador
+          timeout = setTimeout(() => {
+            validateField(event);
+          }, 500); // 500 ms de retraso antes de validar
+        });
+        break;
+      // Añadir más casos si hay más campos
+    }
+  });
+}
+
+
+
 
 function initializeFormSubmission() {
   var newsForm = document.getElementById("newsForm");
@@ -114,39 +148,28 @@ function validateEventDate() {
   }
 }
 
-function validateTags() {
-  var regex = /^[a-zA-Z0-9]+(,[a-zA-Z0-9]+)*$/;
-
-  // Verifica si el campo de etiquetas está vacío
-  if (tags.value.trim() === "") {
-    showSuccess(tags);
-    return true;
-  }
-
-  // Aplica la validación con expresión regular a las etiquetas
-  if (!regex.test(tags.value)) {
-    showError(
-      tags,
-      "Las etiquetas deben estar separadas por comas sin espacios."
-    );
-    return false;
-  } else {
-    showSuccess(tags);
-    return true;
-  }
-}
-
-function validateNotEmpty(event) {
+function validateText(event) {
   var element = event.target;
-  // Verifica si el campo está vacío
+
+  // Verificación genérica de campo vacío
   if (element.value.trim() === "") {
     showError(element, "Este campo no puede estar vacío.");
     return false;
-  } else {
-    showSuccess(element);
-    return true;
   }
+
+  // Validación específica para formato
+  var regex = /^[a-zA-Z0-9 ]+(,[a-zA-Z0-9 ]+)*$/;
+
+  if (!regex.test(element.value)) {
+    showError(element, "Este campo no debe de tener carácteres especiales.");
+    return false;
+  }
+
+  // Si pasa todas las validaciones
+  showSuccess(element);
+  return true;
 }
+
 
 function showError(element, message) {
   element.style.borderColor = "red";
@@ -185,23 +208,23 @@ function searchNews(searchTerm) {
   // Envía una petición para buscar noticias
   xhr.open("GET", "../../../app/controller/NewsController.php?search=" + encodeURIComponent(searchTerm), true);
   xhr.onload = () => {
-      // Maneja la respuesta del servidor
-      if (xhr.status === 200) {
-          var response = JSON.parse(xhr.responseText);
-          if (response.success) {
-              // Limpia y muestra las noticias que coinciden con la búsqueda
-              document.getElementById('news-container').innerHTML = '';
-              response.news.forEach(newsData => {
-                  var newsItem = new News(newsData.title, newsData.content, newsData.eventDate, newsData.tags, newsData.category, newsData.importance);
-                  newsItem.display();
-              });
-          } else {
-              console.error("Error from PHP:", response.message);
-          }
+    // Maneja la respuesta del servidor
+    if (xhr.status === 200) {
+      var response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        // Limpia y muestra las noticias que coinciden con la búsqueda
+        document.getElementById('news-container').innerHTML = '';
+        response.news.forEach(newsData => {
+          var newsItem = new News(newsData.title, newsData.content, newsData.eventDate, newsData.tags, newsData.category, newsData.importance);
+          newsItem.display();
+        });
+      } else {
+        console.error("Error from PHP:", response.message);
       }
+    }
   };
   xhr.onerror = () => {
-      console.error("Request error:", xhr.status, xhr.statusText);
+    console.error("Request error:", xhr.status, xhr.statusText);
   };
   xhr.send();
 }
@@ -210,7 +233,7 @@ function filterNews() {
   // Filtra las noticias basándose en el término de búsqueda
   const searchTerm = document.getElementById('search-input').value.toLowerCase();
   const filteredNews = News.allNews.filter(news => news.title.toLowerCase().includes(searchTerm));
-  
+
   // Muestra las noticias filtradas
   News.displayAll(filteredNews);
 }
@@ -224,12 +247,12 @@ fetch("../../../app/handlers/getNews.php")
   .then((newsItems) => {
     // Crea objetos de noticias y los muestra
     News.allNews = newsItems.map(itemData => new News(
-        itemData.title,
-        itemData.content,
-        itemData.eventDate,
-        itemData.tags,
-        itemData.category,
-        itemData.importance
+      itemData.title,
+      itemData.content,
+      itemData.eventDate,
+      itemData.tags,
+      itemData.category,
+      itemData.importance
     ));
     News.displayAll();
   })
