@@ -83,7 +83,6 @@ function handleFormSubmit(e) {
 
   // Realiza la validación de los campos del formulario
   isValid &&= validateEventDate();
-  isValid &&= validateTags();
   isValid &&= validateNotEmpty({
     target: document.getElementById("title"),
   });
@@ -121,6 +120,16 @@ function handleFormSubmit(e) {
   }
 }
 
+function validateNotEmpty(event) {
+  var element = event.target;
+  if (element.value.trim() === "") {
+    showError(element, "Este campo no puede estar vacío.");
+    return false;
+  } else {
+    showSuccess(element);
+    return true;
+  }
+}
 // Funciones de Ayuda (Helpers) y Validación
 function validateEventDate() {
   // Verifica si el campo de fecha está visible
