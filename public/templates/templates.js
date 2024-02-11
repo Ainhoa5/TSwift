@@ -8,6 +8,7 @@ function createMenu(basePath, isIndex) {
                         <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
                         <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
                         <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
+                        <li><a href="${basePath}app/view/drafts.html">Drafts</a></li>
                     </ul>`;
 
     if (isIndex) {
@@ -27,6 +28,7 @@ function createMenu(basePath, isIndex) {
                     <li><a href="${basePath}app/view/quiz.html">Quiz</a></li>
                     <li><a href="${basePath}app/view/discografia.html">Discografía</a></li>
                     <li><a href="${basePath}app/view/multimedia.html">Multimedia</a></li>
+                    <li><a href="${basePath}app/view/drafts.html">Drafts</a></li>
 
                     <button id="openNewsFormBtn" class="action_btn">Create News</button>
                 </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/styles/style.css">
+    <link rel="stylesheet" href="../../public/styles/menu.css">
+    <link rel="stylesheet" href="../../public/styles/news.css">
+    <link rel="stylesheet" href="../../public/styles/footer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- MENU -->
+    <div id="menu-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createMenu('../../', false); // '.' for current directory, 'true' to show search bar
+    </script> 
+    <h1>DRAFTS</h1>
+
+    <!-- Your page content -->
+    <div id="news-container"></div>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+    <script src="../../public/templates/templates.js"></script>
+    <script>
+        // Call the function with appropriate parameters
+        createFooter(); // '.' for current directory, 'true' to show search bar
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="../../public/js/handler/displayDraftsHandler.js"></script>
+    <script src="../../public/js/clases/News.js"></script>
+
+
+</body>
+
+</html>
