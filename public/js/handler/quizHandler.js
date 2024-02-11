@@ -12,8 +12,8 @@ const questions = [
     },
     {
         question: "¿Cuántos Grammy tiene Taylor Swift?",
-        answers: ["3", "21", "12"],
-        correctAnswer: "12"
+        answers: ["3", "21", "13"],
+        correctAnswer: "13"
     },
     // Más preguntas...
 ];

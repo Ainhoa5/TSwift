@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="public/styles/news.css">
     <link rel="stylesheet" href="public/styles/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -21,7 +23,8 @@
     <!-- NOSCRIPT -->
     <noscript>
         <div style="background-color: yellow; color: black; padding: 10px; text-align: center;">
-            Parece que JavaScript no está habilitado en tu navegador. Algunas características de esta página no funcionarán correctamente sin JavaScript.
+            Parece que JavaScript no está habilitado en tu navegador. Algunas características de esta página no
+            funcionarán correctamente sin JavaScript.
         </div>
     </noscript>
     <!-- MENU -->
@@ -37,68 +40,69 @@
 
     <!-- Pop-up Form in index.php -->
     <form id="newsForm" class="form-popup">
-    <!-- Importancia de la Noticia -->
-    <div class="form-group form-group-horizontal">
-        <label>Importancia de la Noticia:</label>
-        <div class="radio-group">
-            <div class="h-group">
-                <input type="radio" id="importance_high" name="importance" value="high" class="form-field">
-                <label for="importance_high">Alta</label>
-            </div>
-            <div class="h-group">
-                <input type="radio" id="importance_medium" name="importance" value="medium" class="form-field">
-                <label for="importance_medium">Media</label>
-            </div>
-            <div class="h-group">
-                <input type="radio" id="importance_low" name="importance" value="low" class="form-field">
-                <label for="importance_low">Baja</label>
+        <!-- Importancia de la Noticia -->
+        <div class="form-group form-group-horizontal">
+            <label>Importancia de la Noticia:</label>
+            <div class="radio-group">
+                <div class="h-group">
+                    <input type="radio" id="importance_high" name="importance" value="high" class="form-field">
+                    <label for="importance_high">Alta</label>
+                </div>
+                <div class="h-group">
+                    <input type="radio" id="importance_medium" name="importance" value="medium" class="form-field">
+                    <label for="importance_medium">Media</label>
+                </div>
+                <div class="h-group">
+                    <input type="radio" id="importance_low" name="importance" value="low" class="form-field">
+                    <label for="importance_low">Baja</label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Categorías de la Noticia -->
-    <div class="form-group form-group-horizontal">
-        <label>Categorías de la Noticia:</label>
-        <div class="checkbox-group">
-            <div class="h-group">
-                <input type="checkbox" id="category_event" name="category" value="event" class="form-field">
-                <label for="category_event">Evento</label>
+        <!-- Categorías de la Noticia -->
+        <div class="form-group form-group-horizontal">
+            <label>Categorías de la Noticia:</label>
+            <div class="checkbox-group">
+                <div class="h-group">
+                    <input type="checkbox" id="category_event" name="category" value="event" class="form-field">
+                    <label for="category_event">Evento</label>
+                </div>
+                <div class="h-group">
+                    <input type="checkbox" id="category_song" name="category" value="song" class="form-field">
+                    <label for="category_song">Canción</label>
+                </div>
+                <!-- Añadir más categorías según sea necesario -->
             </div>
-            <div class="h-group">
-                <input type="checkbox" id="category_song" name="category" value="song" class="form-field">
-                <label for="category_song">Canción</label>
-            </div>
-            <!-- Añadir más categorías según sea necesario -->
         </div>
-    </div>
 
-    <!-- Fecha del Evento (Oculto inicialmente) -->
-    <div class="form-group" id="eventDateGroup" style="display:none;">
-        <label for="eventDate">Fecha del Evento:</label>
-        <input type="date" id="eventDate" name="eventDate" class="form-field">
-    </div>
+        <!-- Fecha del Evento (Oculto inicialmente) -->
+        <div class="form-group" id="eventDateGroup" style="display:none;">
+            <label for="eventDate">Fecha del Evento:</label>
+            <input type="date" id="eventDate" name="eventDate" class="form-field">
+        </div>
 
-    <!-- Titulo y Contenido -->
-    <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" maxlength="100" class="form-field">
-    </div>
-    <div class="form-group">
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" class="form-field"></textarea>
-    </div>
+        <!-- Titulo y Contenido -->
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" maxlength="100" class="form-field">
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" class="form-field"></textarea>
+        </div>
 
-    <!-- Etiquetas de la Noticia -->
-    <div class="form-group">
-        <label for="tags">Etiquetas (separadas por comas):</label>
-        <input type="text" id="tags" name="tags" class="form-field">
-    </div>
-    
-    <!-- Botones de acción -->
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-    <span class="closeBtn">&times;</span>
-</form>
+        <!-- Etiquetas de la Noticia -->
+        <div class="form-group">
+            <label for="tags">Etiquetas (separadas por comas):</label>
+            <input type="text" id="tags" name="tags" class="form-field">
+        </div>
+
+        <!-- Botones de acción -->
+        <button type="submit">Submit</button>
+        <button type="button" id="saveDraft">Añadir al Borrador</button>
+        <button type="reset">Reset</button>
+        <span class="closeBtn">&times;</span>
+    </form>
 
 
     <!-- FOOTER -->
@@ -138,6 +142,14 @@
             delay: 400 // 400ms
         });
     </script>
+    <script>
+        window.onload = function () {
+            showWelcomeBackMessage();
+        };
+    </script>
+
+    <script src="public/js/handler/cookiesHandler.js"></script>
+    <script src="public/js/handler/saveDraftsHandler.js"></script>
     <script src="public/templates/dropdownMenu.js"></script>
 </body>
 
