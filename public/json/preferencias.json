@@ -1,0 +1,20 @@
+{
+    "albums": [
+      {
+        "name": "Fearless",
+        "description": "Fearless es el segundo álbum de estudio de Taylor Swift...",
+        "image": "../../public/multimedia/img/fearless.jpg"
+      },
+      {
+        "name": "1989",
+        "description": "1989 es el quinto álbum de estudio de Taylor Swift...",
+        "image": "../../public/multimedia/img/1989.jpg"
+      },
+      {
+        "name": "Reputation",
+        "description": "Reputation es el sexto álbum de estudio de Taylor Swift...",
+        "image": "../../public/multimedia/img/reputation.jpg"
+      }
+    ]
+  }
+  

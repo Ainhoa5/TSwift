@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias del Usuario</title>
+</head>
+<body>
+    <form id="preferencesForm">
+        <label for="userName">Nombre del usuario:</label>
+        <input type="text" id="userName" name="userName" required>
+
+        <label for="backgroundColor">Color de fondo preferido:</label>
+        <input type="color" id="backgroundColor" name="backgroundColor" required>
+
+        <label for="textColor">Color de letra preferido:</label>
+        <input type="color" id="textColor" name="textColor" required>
+
+        <label for="favoriteAlbum">Álbum favorito de Taylor Swift:</label>
+        <select id="favoriteAlbum" name="favoriteAlbum" required>
+            <option value="Fearless">Fearless</option>
+            <option value="1989">1989</option>
+            <option value="Reputation">Reputation</option>
+            <!-- Añade más álbumes según sea necesario -->
+        </select>
+
+        <button type="submit">Guardar Preferencias</button>
+    </form>
+
+    <script src="../../public/js/handler/preferenciasHandler.js"></script>
+</body>
+</html>

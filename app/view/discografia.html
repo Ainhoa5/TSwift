@@ -1,98 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discografia</title>
 
-    <meta name="Quiz" content="A description of Taylor Swift Career" />
-    <link rel="stylesheet" href="../../public/styles/timeline.css" />
-    <link rel="stylesheet" href="../../public/styles/menu.css" />
-    <link rel="stylesheet" href="../../public/styles/style.css" />
-    <link rel="stylesheet" href="../../public/styles/footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- MENU -->
-    <div id="menu-container"></div>
-    <script src="../../public/templates/templates.js"></script>
-    <script>
-      // Call the function with appropriate parameters
-      createMenu("../../", false); // '.' for current directory, 'true' to show search bar
-    </script>
-    <!-- CRONOLOGIA -->
-    <div class="l-constrain">
-      <h1 class="title">Album Chronology</h1>
-      <div class="timeline">
-        <div class="timeline__bar"></div>
-        <div class="timeline__row" id="timelineButtons">
-          <!-- Timeline buttons will be injected here -->
-        </div>
-        <div class="timeline__content" id="timelineContent">
-          <!-- Timeline items will be injected here -->
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discografia</title>
+
+  <meta name="Quiz" content="A description of Taylor Swift Career" />
+  <link rel="stylesheet" href="../../public/styles/timeline.css" />
+  <link rel="stylesheet" href="../../public/styles/menu.css" />
+  <link rel="stylesheet" href="../../public/styles/style.css" />
+  <link rel="stylesheet" href="../../public/styles/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- MENU -->
+  <div id="menu-container"></div>
+  <script src="../../public/templates/templates.js"></script>
+  <script>
+    // Call the function with appropriate parameters
+    createMenu("../../", false); // '.' for current directory, 'true' to show search bar
+  </script>
+  <!-- CRONOLOGIA -->
+  <div class="l-constrain">
+    <h1 class="title">Album Chronology</h1>
+    <div class="timeline">
+      <div class="timeline__bar"></div>
+      <div class="timeline__row" id="timelineButtons">
+        <!-- Timeline buttons will be injected here -->
+      </div>
+      <div class="timeline__content" id="timelineContent">
+        <!-- Timeline items will be injected here -->
       </div>
     </div>
+  </div>
 
-    <!-- Biografia -->
-    <section id="biography">
-      <h2 class="title">Taylor Swift - Biography</h2>
-      <div class="bio-container">
-        <div class="bio-text">
-          <h3>About Taylor</h3>
-          <p>
-            Taylor Swift es una cantautora y actriz estadounidense. Es una de
-            las artistas musicales más populares del siglo XXI, conocida por sus
-            canciones que tratan sobre su vida personal.
-          </p>
-        </div>
-        <div class="bio-image">
-          <img src="../../public/multimedia/img/tay.jpg" alt="Taylor Swift" />
-        </div>
-        <div class="bio-facts">
-          <h3>Quick Facts</h3>
-          <ul>
-            <li>Nacimiento: 13 de diciembre de 1989</li>
-            <li>Género: Pop, Country</li>
-            <li>Álbumes destacados: Fearless, 1989, Reputation</li>
-          </ul>
-        </div>
+  <!-- Biografia -->
+  <section id="biography">
+    <h2 class="title">Taylor Swift - Biography</h2>
+    <div class="bio-container">
+      <div class="bio-text">
+        <h3>About Taylor</h3>
+        <p>
+          Taylor Swift es una cantautora y actriz estadounidense. Es una de
+          las artistas musicales más populares del siglo XXI, conocida por sus
+          canciones que tratan sobre su vida personal.
+        </p>
       </div>
-    </section>
+      <div class="bio-image">
+        <img src="../../public/multimedia/img/tay.jpg" alt="Taylor Swift" />
+        <button id="deletePreferences">Borrar Preferencias</button>
+      </div>
+      <div class="bio-facts">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li>Nacimiento: 13 de diciembre de 1989</li>
+          <li>Género: Pop, Country</li>
+          <li>Álbumes destacados: Fearless, 1989, Reputation</li>
+        </ul>
+      </div>
 
-    <!-- FOOTER -->
-    <div id="footer-container"></div>
-    <script src="../../public/templates/templates.js"></script>
-    <script>
-      // Call the function with appropriate parameters
-      createFooter(); // '.' for current directory, 'true' to show search bar
-    </script>
-    <script src="../../public/js/handler/timelineHandler.js"></script>
-    <script src="../../public/templates/dropdownMenu.js"></script>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-      //SCROLL
-      const sr = ScrollReveal({
-        origin: "top",
-        distance: "85px",
-        duration: 2200,
-        reset: true,
-      });
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+  <script src="../../public/templates/templates.js"></script>
+  <script>
+    // Call the function with appropriate parameters
+    createFooter(); // '.' for current directory, 'true' to show search bar
+  </script>
 
-      sr.reveal(".l-constrain", {
-        delay: 200,
-      });
-      sr.reveal("#biography", {
-        delay: 400,
-      });
-      sr.reveal(".navbar", {
-        delay: 50,
-      });
-    </script>
-  </body>
+
+
+  <script src="../../public/js/handler/changePreferencias.js"></script>
+  <script src="../../public/js/handler/timelineHandler.js"></script>
+  <script src="../../public/templates/dropdownMenu.js"></script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    //SCROLL
+    const sr = ScrollReveal({
+      origin: "top",
+      distance: "85px",
+      duration: 2200,
+      reset: true,
+    });
+
+    sr.reveal(".l-constrain", {
+      delay: 200,
+    });
+    sr.reveal("#biography", {
+      delay: 400,
+    });
+    sr.reveal(".navbar", {
+      delay: 50,
+    });
+  </script>
+
+
+</body>
+
 </html>
