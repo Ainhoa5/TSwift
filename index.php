@@ -96,6 +96,12 @@
             <label for="tags">Etiquetas (separadas por comas):</label>
             <input type="text" id="tags" name="tags" class="form-field">
         </div>
+        <!-- Ubicación Actual: Latitud y Longitud -->
+        <div class="form-group">
+            <input id="latitude" name="latitude" value="">
+            <input id="longitude" name="longitude" value="">
+            <button type="button" id="getLocation">Usar Ubicación Actual</button>
+        </div>
 
         <!-- Botones de acción -->
         <button type="submit">Submit</button>

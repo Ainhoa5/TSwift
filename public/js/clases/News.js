@@ -1,17 +1,21 @@
 class News {
-    constructor(title, content, eventDate, tags, category, importance) {
+    constructor(title, content, eventDate, tags, category, importance, latitude, longitude) {
         this.title = title;
         this.content = content;
         this.eventDate = eventDate;
         this.tags = tags;
         this.category = category;
         this.importance = importance;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
-    
+
     static allNews = [];
 
     save() {
-        console.log(this.tags);
+
+        console.log(this.latitude);
+        console.log(this.longitude);
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "../../../app/controller/NewsController.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -37,54 +41,54 @@ class News {
         };
 
         // Include the new fields in the form data
-        var formData = `title=${encodeURIComponent(this.title)}&content=${encodeURIComponent(this.content)}&eventDate=${encodeURIComponent(this.eventDate)}&tags=${encodeURIComponent(this.tags)}&category=${encodeURIComponent(this.category)}&importance=${encodeURIComponent(this.importance)}`;
+var formData = `title=${encodeURIComponent(this.title)}&content=${encodeURIComponent(this.content)}&eventDate=${encodeURIComponent(this.eventDate)}&tags=${encodeURIComponent(this.tags)}&category=${encodeURIComponent(this.category)}&importance=${encodeURIComponent(this.importance)}&latitude=${encodeURIComponent(this.latitude)}&longitude=${encodeURIComponent(this.longitude)}`;
         xhr.send(formData);
     }
 
     display() {
         var newsContainer = document.getElementById('news-container');
-    
+
         var newsItem = document.createElement('div');
         newsItem.classList.add('news-item');
-    
+
         var titleElement = document.createElement('h3');
         titleElement.textContent = this.title;
-    
+
         var contentElement = document.createElement('p');
         contentElement.textContent = this.content;
-    
+
         // Add the elements only if they have value
         newsItem.appendChild(titleElement);
         newsItem.appendChild(contentElement);
-    
+
         if (this.eventDate) {
             var dateElement = document.createElement('p');
             dateElement.textContent = `Fecha del Evento: ${this.eventDate}`;
             dateElement.classList.add('news-date'); // Add class for styling
             newsItem.appendChild(dateElement);
         }
-    
+
         if (this.tags) {
             var tagsElement = document.createElement('p');
             tagsElement.textContent = `Etiquetas: ${this.tags}`;
             tagsElement.classList.add('news-tags'); // Add class for styling
             newsItem.appendChild(tagsElement);
         }
-    
+
         if (this.category) {
             var categoryElement = document.createElement('p');
             categoryElement.textContent = `Categoría: ${this.category}`;
             categoryElement.classList.add('news-category'); // Add class for styling
             newsItem.appendChild(categoryElement);
         }
-    
+
         if (this.importance) {
             var importanceElement = document.createElement('p');
             importanceElement.textContent = `Importancia: ${this.importance}`;
             importanceElement.classList.add('news-importance'); // Add class for styling
             newsItem.appendChild(importanceElement);
         }
-    
+
         newsContainer.appendChild(newsItem);
     }
     static displayAll() {
@@ -92,5 +96,5 @@ class News {
         newsContainer.innerHTML = ''; // Limpia el contenedor actual de noticias
         News.allNews.forEach(newsItem => newsItem.display());
     }
-    
+
 }

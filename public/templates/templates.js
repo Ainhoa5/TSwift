@@ -45,6 +45,7 @@ function createMenu(basePath, isIndex) {
                     <input type="text" id="search-input" placeholder="Buscar noticias..." />
                     </br>
                     <a href="#" class="search-btn" id="search-button">Search</a>
+                    <a href="#" class="search-btn" id="search-nearby-button">Search Nearby New</a>
                 </section>
             </main>`;
     }

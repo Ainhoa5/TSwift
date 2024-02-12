@@ -59,8 +59,6 @@ function initializeFormValidation() {
 }
 
 
-
-
 function initializeFormSubmission() {
   var newsForm = document.getElementById("newsForm");
   // Añade un event listener al formulario para manejar su envío
@@ -79,46 +77,47 @@ function initializeSearchBar() {
 
 function handleFormSubmit(e) {
   e.preventDefault(); // Previene el comportamiento por defecto del formulario
+
   var isValid = true;
 
-  // Realiza la validación de los campos del formulario
+  // Supongamos que estas funciones de validación están definidas en otro lugar
   isValid &&= validateEventDate();
-  isValid &&= validateNotEmpty({
-    target: document.getElementById("title"),
-  });
-  isValid &&= validateNotEmpty({
-    target: document.getElementById("content"),
-  });
+  isValid &&= validateNotEmpty({ target: document.getElementById("title") });
+  isValid &&= validateNotEmpty({ target: document.getElementById("content") });
 
-  // Procesa el formulario si todas las validaciones son correctas
   if (isValid) {
-    // Recoge los valores del formulario
     var title = document.getElementById("title").value;
     var content = document.getElementById("content").value;
     var eventDate = document.getElementById("eventDate").value;
     var tags = document.getElementById("tags").value;
-    // Recoge los valores de los radio buttons
-    var category = document.querySelector('input[name="category"]:checked')
-      ? document.querySelector('input[name="category"]:checked').value
-      : "";
-    var importance = document.querySelector(
-      'input[name="importance"]:checked'
-    )
-      ? document.querySelector('input[name="importance"]:checked').value
-      : "";
+    var latitude = document.getElementById("latitude").value;
+    var longitude = document.getElementById("longitude").value;
+    var category = document.querySelector('input[name="category"]:checked') ? document.querySelector('input[name="category"]:checked').value : "";
+    var importance = document.querySelector('input[name="importance"]:checked') ? document.querySelector('input[name="importance"]:checked').value : "";
 
-    // Crea y guarda un nuevo ítem de noticias
-    var newsItem = new News(
-      title,
-      content,
-      eventDate,
-      tags,
-      category,
-      importance
-    );
+    // Creación del objeto News y llamada al método save
+    var newsItem = new News(title, content, eventDate, tags, category, importance, latitude, longitude);
     newsItem.save();
   }
 }
+
+
+// LOCALIZACIÓN LOGIC
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.getElementById('latitude').value = position.coords.latitude;
+      document.getElementById('longitude').value = position.coords.longitude;
+    }, function(error) {
+      alert("Error al obtener la ubicación: " + error.message);
+    });
+  } else {
+    alert("La Geolocalización no está soportada por este navegador.");
+  }
+}
+
+document.getElementById('getLocation').addEventListener('click', getLocation);
+
 
 function validateNotEmpty(event) {
   var element = event.target;
@@ -210,6 +209,44 @@ checkbox.addEventListener("change", function () {
     eventDateGroup.style.display = "none";
   }
 });
+
+// logica para buscar noticias cercanas
+function initializeNearbySearch() {
+  document.getElementById('search-nearby-button').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevenir la acción por defecto del enlace
+    navigator.geolocation.getCurrentPosition(function(position) {
+      searchNearbyNews(position.coords.latitude, position.coords.longitude);
+    }, function(error) {
+      console.error("Error obtaining location:", error);
+    });
+  });
+}
+
+function searchNearbyNews(lat, lon) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "../../../app/controller/NewsController.php?nearby=true&lat=" + lat + "&lon=" + lon, true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      var response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        document.getElementById('news-container').innerHTML = '';
+        response.news.forEach(function(newsData) {
+          var newsItem = new News(newsData.title, newsData.content, newsData.eventDate, newsData.tags, newsData.category, newsData.importance);
+          newsItem.display();
+        });
+      } else {
+        console.error("Error from PHP:", response.message);
+      }
+    }
+  };
+  xhr.onerror = function () {
+    console.error("Request error.");
+  };
+  xhr.send();
+}
+
+// Llamar a initializeNearbySearch en la carga de la página o cuando sea apropiado
+document.addEventListener('DOMContentLoaded', initializeNearbySearch);
 
 // Lógica de la barra de búsqueda
 function searchNews(searchTerm) {
