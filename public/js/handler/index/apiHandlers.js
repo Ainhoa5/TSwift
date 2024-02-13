@@ -28,6 +28,8 @@ function searchNearbyNews(lat, lon) {
             // No es necesario parsear la respuesta si jQuery ya lo ha hecho automáticamente.
             if (response.success) {
                 $('#news-container').empty();
+
+                $('#news-container').fadeIn();
                 response.news.forEach(function (newsData) {
                     var newsItem = new News(newsData.title, newsData.content, newsData.eventDate, newsData.tags, newsData.category, newsData.importance);
                     newsItem.display();
