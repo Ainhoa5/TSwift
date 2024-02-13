@@ -99,13 +99,13 @@
         <!-- Ubicación Actual: Latitud y Longitud -->
         <div class="form-group">
             <label for="tags">Latitud:</label>
-            <input type="number" id="latitude" name="latitude" value="">
+            <input type="text" id="latitude" name="latitude" value="">
             <label for="tags">Longitud:</label>
-            <input type="number" id="longitude" name="longitude" value="">
+            <input type="text" id="longitude" name="longitude" value="">
         </div>
 
         <!-- Botones de acción -->
-            <button type="button" id="getLocation">Usar Ubicación Actual</button>
+        <button type="button" id="getLocation">Usar Ubicación Actual</button>
         <button type="submit">Submit</button>
         <button type="button" id="saveDraft">Añadir al Borrador</button>
         <button type="reset">Reset</button>
@@ -121,7 +121,15 @@
         createFooter(); // '.' for current directory, 'true' to show search bar
     </script>
     <!-- Including your JavaScript file -->
-    <script src="public/js/handler/newsFormHandler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="public/js/handler/index/validationRules.js"></script>
+    <script src="public/js/handler/index/init.js"></script>
+    <script src="public/js/handler/index/apiHandlers.js"></script>
+    <script src="public/js/handler/index/eventListeners.js"></script>
+    <script src="public/js/handler/index/formHandlers.js"></script>
+    <script src="public/js/handler/index/uiHelpers.js"></script>
+
+
     <script src="public/js/clases/News.js"></script>
 
     <script src="https://unpkg.com/scrollreveal"></script>

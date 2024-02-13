@@ -42,7 +42,7 @@ class News {
         };
 
         // Include the new fields in the form data
-var formData = `title=${encodeURIComponent(this.title)}&content=${encodeURIComponent(this.content)}&eventDate=${encodeURIComponent(this.eventDate)}&tags=${encodeURIComponent(this.tags)}&category=${encodeURIComponent(this.category)}&importance=${encodeURIComponent(this.importance)}&latitude=${encodeURIComponent(this.latitude)}&longitude=${encodeURIComponent(this.longitude)}`;
+        var formData = `title=${encodeURIComponent(this.title)}&content=${encodeURIComponent(this.content)}&eventDate=${encodeURIComponent(this.eventDate)}&tags=${encodeURIComponent(this.tags)}&category=${encodeURIComponent(this.category)}&importance=${encodeURIComponent(this.importance)}&latitude=${encodeURIComponent(this.latitude)}&longitude=${encodeURIComponent(this.longitude)}`;
         xhr.send(formData);
     }
 
