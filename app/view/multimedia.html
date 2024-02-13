@@ -25,18 +25,28 @@
   <br />
   <br />
   <br />
-  <section id="videos">
+
+  <div id="mediaContainer"></div>
+
+  <div id="playerControls">
+    <button id="playButton">Play</button>
+    <button id="pauseButton">Pause</button>
+    <button id="stopButton">Stop</button>
+    <button id="endButton">Go to the End</button>
+    <button id="rewindButton">Rewind 10s</button>
+    <button id="fastForwardButton">Fast Forward 10s</button>
+    <button id="fullscreenButton">Fullscreen</button>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" title="Volume">
+    <input type="range" id="progressBar" value="0" min="0" max="100" step="1" title="Progress">
+  </div>
+  <div id="playlistSelector-parent">
+    <select id="playlistSelector"></select>
+  </div>
+
+
+  <!-- <section id="videos">
     <h2>Videos</h2>
     <div class="media-content">
-      <!-- Videos go here -->
-    </div>
-    <div id="playerControls">
-      <button id="playButton">Play</button>
-      <button id="pauseButton">Pause</button>
-      <button id="stopButton">Stop</button>
-      <button id="rewindButton">Retroceder 10s</button>
-      <button id="fastForwardButton">Avanzar 10s</button>
-      <button id="fullscreenButton">Pantalla completa</button>
     </div>
 
   </section>
@@ -44,17 +54,15 @@
   <section id="images">
     <h2>Imágenes</h2>
     <div class="media-content">
-      <!-- Images go here -->
     </div>
   </section>
 
   <section id="audios">
     <h2>Audios</h2>
-    <!-- Aquí se añadirán los audios -->
     <div class="media-content">
       <audio controls>Tu navegador no soporta el elemento de audio.</audio>
     </div>
-  </section>
+  </section> -->
 
   <!-- FOOTER -->
   <div id="footer-container"></div>
@@ -90,7 +98,6 @@
   <script src="../../public/js/clases/Multimedia.js"></script>
   <script src="../../public/js/clases/Video.js"></script>
   <script src="../../public/js/clases/Audio.js"></script>
-  <script src="../../public/js/clases/Image.js"></script>
   <script src="../../public/js/clases/CustomPlayer.js"></script>
   <script src="../../public/js/handler/multimediaHandler.js"></script>
   <script src="../../public/templates/dropdownMenu.js"></script>

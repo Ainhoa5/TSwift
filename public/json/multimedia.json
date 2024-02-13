@@ -2,58 +2,32 @@
     {
         "mulType": "video",
         "src": "debut.mp4",
-        "title": "Video 1: Entrevista",
+        "title": "Video 1: Debut",
         "width": "500",
         "height": "315",
         "frameBorder": "0",
         "allowFullscreen": true
     },
     {
-        "mulType": "image",
-        "src": "tay.jpg",
-        "title": "Imagen 1: Sesión de Fotos",
+        "mulType": "video",
+        "src": "lavender.mp4",
+        "title": "Video 2: Behind the Scenes, Lavender Haze",
         "width": "500",
-        "altText": "Portada del último álbum de Taylor Swift."
-    },
-    {
-        "mulType": "image",
-        "src": "tay.jpg",
-        "title": "Imagen 2: Portada de Álbum",
-        "width": "500",
-        "altText": "Portada del último álbum de Taylor Swift."
-    },
-    {
-        "mulType": "image",
-        "src": "tay.jpg",
-        "title": "Imagen 3: Concierto",
-        "width": "500",
-        "altText": "Portada del último álbum de Taylor Swift."
-    },
-    {
-        "mulType": "image",
-        "src": "tay.jpg",
-        "title": "Imagen 3: Concierto",
-        "width": "500",
-        "altText": "Portada del último álbum de Taylor Swift."
+        "height": "315",
+        "frameBorder": "0",
+        "allowFullscreen": true
     },
     {
         "mulType": "audio",
         "src": "debut.mp3",
-        "title": "Audio 1: Canción Hit",
+        "title": "Audio 1: Debut Concert",
         "controls": true,
         "type": "audio/mpeg"
     },
     {
         "mulType": "audio",
-        "src": "debut.mp3",
-        "title": "Audio 2: Balada",
-        "controls": true,
-        "type": "audio/mpeg"
-    },
-    {
-        "mulType": "audio",
-        "src": "debut.mp3",
-        "title": "Audio 3: Colaboración",
+        "src": "lavender.mp3",
+        "title": "Audio 2: Behind the Scenes, Lavender Haze",
         "controls": true,
         "type": "audio/mpeg"
     }

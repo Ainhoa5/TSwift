@@ -5,23 +5,15 @@ class Audio extends Multimedia {
         this.type = type;
     }
 
-    display() {
-        let mediaSection = document.getElementById('videos');
-        let mediaContainer = mediaSection.querySelector('.media-content');
-
-        if (!mediaContainer) {
-            mediaContainer = document.createElement('div');
-            mediaContainer.className = 'media-content';
-            mediaSection.appendChild(mediaContainer);
-        }
-
+    createMediaElement() {
         const videoElement = document.createElement('video');
-        videoElement.src = this.src;
+        videoElement.src = this.src; // Asume que 'this.src' tiene la ruta del archivo
         videoElement.width = this.width;
         videoElement.height = this.height;
-        videoElement.controls = true; // Asumimos que queremos controles por defecto
+        videoElement.controls = true; // Muestra controles de reproducción
         videoElement.setAttribute('allowfullscreen', this.allowFullscreen);
-        mediaContainer.appendChild(videoElement);
+        return videoElement;
     }
-    
+
+
 }

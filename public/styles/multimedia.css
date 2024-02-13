@@ -23,6 +23,105 @@ section {
   border-radius: 20px; /* Bordes redondeados para estética */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
 }
+/* Estilos básicos para el contenedor de medios */
+#mediaContainer {
+  margin-bottom: 20px; /* Espacio debajo del contenedor de medios */
+  display: flex;
+  justify-content: center; /* Centrar el video */
+}
+
+#mediaContainer video {
+  width: 80%; /* Aumentar el ancho del video */
+  max-width: 800px; /* Establecer un máximo para asegurar que no sea demasiado grande */
+  height: auto; /* Ajustar la altura automáticamente */
+}
+
+/* Estilos generales para los controles del reproductor */
+#playerControls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  align-items: center; /* Ya está establecido para centrar verticalmente */
+  gap: 10px; /* Espacio entre los controles */
+  background: #f0f0f0; /* Fondo claro para los controles */
+  padding: 10px;
+  border-radius: 5px; /* Bordes redondeados para el contenedor de controles */
+}
+
+/* Ajustes para los inputs de tipo range */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 60%; /* Ajustar según sea necesario para mantener el diseño deseado */
+  margin: 5px 0; /* Espacio vertical */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px; /* Ancho del thumb */
+  height: 15px; /* Alto del thumb */
+  background: #4CAF50; /* Color del thumb */
+  cursor: pointer; /* Cursor en forma de mano */
+  border-radius: 50%; /* Hacer el thumb redondo */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: #ddd;
+  border-radius: 3px;
+}
+
+/* Estilos para Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 5px;
+  background: #ddd;
+  border-radius: 3px;
+}
+
+/* Estilos para el selector de playlist */
+#playlistSelector-parent {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 50px; /* Altura del contenedor, ajusta según necesites */
+  margin: 10px 0; /* Margen exterior para separación, ajusta según necesites */
+}
+
+/* Estilos para el selector de playlist, ajustes adicionales si son necesarios */
+#playlistSelector {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  width: auto; /* Asegura que el select no se expanda más de lo necesario */
+  /* Agrega cualquier otro estilo específico que necesites */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+  #playerControls {
+    flex-direction: column;
+  }
+  
+  input[type="range"], #playlistSelector {
+    width: calc(100% - 20px); /* Ajustar el ancho en dispositivos móviles */
+  }
+  
+  #mediaContainer video {
+    width: 100%; /* El video ocupa todo el ancho disponible en móviles */
+  }
+}
+
+
 
 /* Cuando la pantalla es más grande que 600px, muestra dos elementos por fila */
 @media (min-width: 601px) {
