@@ -9,24 +9,6 @@
         "allowFullscreen": true
     },
     {
-        "mulType": "video",
-        "src": "debut.mp4",
-        "title": "Video 2: Concierto en Vivo",
-        "width": "560",
-        "height": "315",
-        "frameBorder": "0",
-        "allowFullscreen": true
-    },
-    {
-        "mulType": "video",
-        "src": "debut.mp4",
-        "title": "Video 3: Documental",
-        "width": "560",
-        "height": "315",
-        "frameBorder": "0",
-        "allowFullscreen": true
-    },
-    {
         "mulType": "image",
         "src": "tay.jpg",
         "title": "Imagen 1: Sesión de Fotos",

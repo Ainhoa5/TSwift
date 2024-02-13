@@ -1,90 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multimedia</title>
-    <meta name="Quiz" content="A recolection of all Taylor Swift related" />
-    <link rel="stylesheet" href="../../public/styles/multimedia.css" />
-    <link rel="stylesheet" href="../../public/styles/footer.css" />
-    <link rel="stylesheet" href="../../public/styles/menu.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../../public/styles/style.css" />
-  </head>
-  <body>
-    <!-- MENU -->
-    <div id="menu-container"></div>
-    <script src="../../public/templates/templates.js"></script>
-    <script>
-      // Call the function with appropriate parameters
-      createMenu("../../", false); // '.' for current directory, 'true' to show search bar
-    </script>
-    <br />
-    <br />
-    <br />
-    <section id="videos">
-      <h2>Videos</h2>
-      <div class="media-content">
-        <!-- Videos go here -->
-      </div>
-    </section>
 
-    <section id="images">
-      <h2>Imágenes</h2>
-      <div class="media-content">
-        <!-- Images go here -->
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multimedia</title>
+  <meta name="Quiz" content="A recolection of all Taylor Swift related" />
+  <link rel="stylesheet" href="../../public/styles/multimedia.css" />
+  <link rel="stylesheet" href="../../public/styles/footer.css" />
+  <link rel="stylesheet" href="../../public/styles/menu.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="../../public/styles/style.css" />
+</head>
 
-    <section id="audios">
-      <h2>Audios</h2>
-      <!-- Aquí se añadirán los audios -->
-      <div class="media-content">
-        <audio controls>Tu navegador no soporta el elemento de audio.</audio>
-      </div>
-    </section>
+<body>
+  <!-- MENU -->
+  <div id="menu-container"></div>
+  <script src="../../public/templates/templates.js"></script>
+  <script>
+    // Call the function with appropriate parameters
+    createMenu("../../", false); // '.' for current directory, 'true' to show search bar
+  </script>
+  <br />
+  <br />
+  <br />
+  <section id="videos">
+    <h2>Videos</h2>
+    <div class="media-content">
+      <!-- Videos go here -->
+    </div>
+    <div id="playerControls">
+      <button id="playButton">Play</button>
+      <button id="pauseButton">Pause</button>
+      <button id="stopButton">Stop</button>
+      <button id="rewindButton">Retroceder 10s</button>
+      <button id="fastForwardButton">Avanzar 10s</button>
+      <button id="fullscreenButton">Pantalla completa</button>
+    </div>
 
-    <!-- FOOTER -->
-    <div id="footer-container"></div>
-    <script src="../../public/templates/templates.js"></script>
-    <script>
-      // Call the function with appropriate parameters
-      createFooter(); // '.' for current directory, 'true' to show search bar
-    </script>
-    <!-- SCROLL -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-      //SCROLL
-      const sr = ScrollReveal({
-        origin: "top",
-        distance: "85px",
-        duration: 2200,
-        reset: false,
-      });
+  </section>
 
-      sr.reveal(".navbar", {
-        delay: 50,
-      });
-      sr.reveal("#videos", {
-        delay: 200,
-      });
-      sr.reveal("#images", {
-        delay: 300,
-      });
-      sr.reveal("#audios", {
-        delay: 400,
-      });
-    </script>
+  <section id="images">
+    <h2>Imágenes</h2>
+    <div class="media-content">
+      <!-- Images go here -->
+    </div>
+  </section>
 
-    <script src="../../public/js/handler/multimediaHandler.js"></script>
-    <script src="../../public/js/clases/Multimedia.js"></script>
-    <script src="../../public/js/clases/Audio.js"></script>
-    <script src="../../public/js/clases/Video.js"></script>
-    <script src="../../public/js/clases/Image.js"></script>
-    <script src="../../public/templates/dropdownMenu.js"></script>
-  </body>
+  <section id="audios">
+    <h2>Audios</h2>
+    <!-- Aquí se añadirán los audios -->
+    <div class="media-content">
+      <audio controls>Tu navegador no soporta el elemento de audio.</audio>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+  <script src="../../public/templates/templates.js"></script>
+  <script>
+    // Call the function with appropriate parameters
+    createFooter(); // '.' for current directory, 'true' to show search bar
+  </script>
+  <!-- SCROLL -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    //SCROLL
+    const sr = ScrollReveal({
+      origin: "top",
+      distance: "85px",
+      duration: 2200,
+      reset: false,
+    });
+
+    sr.reveal(".navbar", {
+      delay: 50,
+    });
+    sr.reveal("#videos", {
+      delay: 200,
+    });
+    sr.reveal("#images", {
+      delay: 300,
+    });
+    sr.reveal("#audios", {
+      delay: 400,
+    });
+  </script>
+  <script src="../../public/js/clases/Multimedia.js"></script>
+  <script src="../../public/js/clases/Video.js"></script>
+  <script src="../../public/js/clases/Audio.js"></script>
+  <script src="../../public/js/clases/Image.js"></script>
+  <script src="../../public/js/clases/CustomPlayer.js"></script>
+  <script src="../../public/js/handler/multimediaHandler.js"></script>
+  <script src="../../public/templates/dropdownMenu.js"></script>
+
+</body>
+
 </html>
