@@ -98,12 +98,14 @@
         </div>
         <!-- Ubicación Actual: Latitud y Longitud -->
         <div class="form-group">
-            <input id="latitude" name="latitude" value="">
-            <input id="longitude" name="longitude" value="">
-            <button type="button" id="getLocation">Usar Ubicación Actual</button>
+            <label for="tags">Latitud:</label>
+            <input type="number" id="latitude" name="latitude" value="">
+            <label for="tags">Longitud:</label>
+            <input type="number" id="longitude" name="longitude" value="">
         </div>
 
         <!-- Botones de acción -->
+            <button type="button" id="getLocation">Usar Ubicación Actual</button>
         <button type="submit">Submit</button>
         <button type="button" id="saveDraft">Añadir al Borrador</button>
         <button type="reset">Reset</button>
@@ -147,11 +149,6 @@
         sr.reveal('.news-item', {
             delay: 400 // 400ms
         });
-    </script>
-    <script>
-        window.onload = function () {
-            showWelcomeBackMessage();
-        };
     </script>
 
     <script src="public/js/handler/cookiesHandler.js"></script>
