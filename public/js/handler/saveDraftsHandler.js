@@ -1,4 +1,4 @@
-// saveDrafts.js
+// En saveDraftsHandler.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // Asegúrate de que el elemento exista antes de añadir el listener

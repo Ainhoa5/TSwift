@@ -1,3 +1,4 @@
+// En News.js
 class News {
     constructor(title, content, eventDate, tags, category, importance, latitude, longitude) {
         this.title = title;
