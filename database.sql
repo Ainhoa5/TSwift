@@ -51,9 +51,6 @@ INSERT INTO albums (year, title, description, cover_image) VALUES
 (2017, 'Reputation', 'Sixth studio album by Taylor Swift.', 'cover6.jpg'),
 (2019, 'Lover', 'Seventh studio album by Taylor Swift.', 'cover7.jpg'),
 (2020, 'Folklore', 'Eighth studio album by Taylor Swift.', 'cover8.jpg'),
-(2020, 'Evermore', 'Ninth studio album by Taylor Swift.', 'cover9.jpg'),
 (2022, 'Midnights', 'Tenth studio album by Taylor Swift.', 'cover10.jpg'),
-(2021, 'Fearless (Taylors Version)', 'Re-recorded version of the 2008 album Fearless by Taylor Swift.', 'cover12.jpg'),
 (2021, 'Red (Taylors Version)', 'Re-recorded version of the 2012 album Red by Taylor Swift.', 'cover13.jpg'),
 (2023, 'Speak Now (Taylors Version)', 'Re-recorded version of the 2010 album Speak Now by Taylor Swift.', 'cover14.jpg'),
-(2023, '1989 (Taylors Version)', 'Re-recorded version of the 2014 album 1989 by Taylor Swift.', 'cover15.jpg');
